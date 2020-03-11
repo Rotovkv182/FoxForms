@@ -42,34 +42,36 @@
             // 
             // box1
             // 
-            this.box1.BackColor = System.Drawing.Color.DimGray;
-            this.box1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.box1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.box1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.box1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.box1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.box1.Location = new System.Drawing.Point(14, 180);
+            this.box1.Font = new System.Drawing.Font("FuturaDemiC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.box1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.box1.Location = new System.Drawing.Point(21, 183);
             this.box1.Multiline = true;
             this.box1.Name = "box1";
-            this.box1.Size = new System.Drawing.Size(250, 30);
+            this.box1.Size = new System.Drawing.Size(237, 28);
             this.box1.TabIndex = 0;
             this.box1.TextChanged += new System.EventHandler(this.Box1_TextChanged);
             // 
             // box2
             // 
-            this.box2.BackColor = System.Drawing.Color.DimGray;
-            this.box2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.box2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.box2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.box2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.box2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.box2.Location = new System.Drawing.Point(14, 254);
+            this.box2.Font = new System.Drawing.Font("FuturaDemiC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.box2.ForeColor = System.Drawing.Color.OrangeRed;
+            this.box2.Location = new System.Drawing.Point(21, 254);
             this.box2.Multiline = true;
             this.box2.Name = "box2";
-            this.box2.Size = new System.Drawing.Size(250, 30);
+            this.box2.Size = new System.Drawing.Size(237, 28);
             this.box2.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button1.Font = new System.Drawing.Font("FuturaDemiC", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.OrangeRed;
             this.button1.Location = new System.Drawing.Point(14, 311);
             this.button1.Name = "button1";
@@ -83,7 +85,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.button2.Font = new System.Drawing.Font("FuturaDemiC", 22F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.OrangeRed;
             this.button2.Location = new System.Drawing.Point(78, 311);
             this.button2.Name = "button2";
@@ -97,7 +99,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button3.Font = new System.Drawing.Font("FuturaDemiC", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.OrangeRed;
             this.button3.Location = new System.Drawing.Point(142, 311);
             this.button3.Name = "button3";
@@ -111,7 +113,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.button4.Font = new System.Drawing.Font("FuturaDemiC", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.OrangeRed;
             this.button4.Location = new System.Drawing.Point(206, 311);
             this.button4.Name = "button4";
@@ -125,7 +127,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.button5.Font = new System.Drawing.Font("FuturaDemiC", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.OrangeRed;
             this.button5.Location = new System.Drawing.Point(142, 123);
             this.button5.Name = "button5";
@@ -138,21 +140,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.OrangeRed;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 38F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(114, 31);
+            this.label1.Font = new System.Drawing.Font("FuturaDemiC", 40F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(5, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 59);
+            this.label1.Size = new System.Drawing.Size(59, 64);
             this.label1.TabIndex = 7;
+            this.label1.Text = "0";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.button6.Font = new System.Drawing.Font("FuturaDemiC", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.OrangeRed;
             this.button6.Location = new System.Drawing.Point(78, 123);
             this.button6.Name = "button6";
@@ -167,11 +170,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.OrangeRed;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label2.Font = new System.Drawing.Font("FuturaDemiC", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(128, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 29);
+            this.label2.Size = new System.Drawing.Size(0, 28);
             this.label2.TabIndex = 9;
             // 
             // Form1
@@ -179,6 +182,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::FoxCalc.Properties.Resources.b4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(278, 394);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
@@ -190,6 +195,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.box2);
             this.Controls.Add(this.box1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "FoxCalc";
             this.ResumeLayout(false);
