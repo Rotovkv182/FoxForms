@@ -25,36 +25,24 @@ namespace FoxCalc
 
         private void Button5_Click(object sender, EventArgs e)
         {
+            int a;
+            int b;
+            a = Convert.ToInt32(box1.Text);
+            b = Convert.ToInt32(box2.Text);
             if (f == 0)
             {
-                int a;
-                int b;
-                a = Convert.ToInt32(box1.Text);
-                b = Convert.ToInt32(box2.Text);
                 label1.Text = Convert.ToString(a + b);
             }
             if (f == 1)
             {
-                int a;
-                int b;
-                a = Convert.ToInt32(box1.Text);
-                b = Convert.ToInt32(box2.Text);
                 label1.Text = Convert.ToString(a - b);
             }
             if (f == 2)
             {
-                int a;
-                int b;
-                a = Convert.ToInt32(box1.Text);
-                b = Convert.ToInt32(box2.Text);
                 label1.Text = Convert.ToString(a * b);
             }
             if (f == 3)
             {
-                int a;
-                int b;
-                a = Convert.ToInt32(box1.Text);
-                b = Convert.ToInt32(box2.Text);
                 label1.Text = Convert.ToString(a / b);
             }
         }
