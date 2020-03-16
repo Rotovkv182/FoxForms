@@ -22,51 +22,61 @@ namespace FoxCalc
         private void N0_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 0;
+            label1.Text = label1.Text + "0";
         }
 
         private void N1_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 1;
+            label1.Text = label1.Text + "1";
         }
 
         private void N2_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 2;
+            label1.Text = label1.Text + "2";
         }
 
         private void N3_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 3;
+            label1.Text = label1.Text + "3";
         }
 
         private void N4_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 4;
+            label1.Text = label1.Text + "4";
         }
 
         private void N5_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 5;
+            label1.Text = label1.Text + "5";
         }
 
         private void N6_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 6;
+            label1.Text = label1.Text + "6";
         }
 
         private void N7_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 7;
+            label1.Text = label1.Text + "7";
         }
 
         private void N8_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 8;
+            label1.Text = label1.Text + "8";
         }
 
         private void N9_Click(object sender, EventArgs e)
         {
             box1.Text = box1.Text + 9;
+            label1.Text = label1.Text + "9";
         }
 
         private void Plus_Click(object sender, EventArgs e)
@@ -132,6 +142,8 @@ namespace FoxCalc
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
+            label2.Text = "";
             box1.Clear();
             a = 0;
             b = 0;
