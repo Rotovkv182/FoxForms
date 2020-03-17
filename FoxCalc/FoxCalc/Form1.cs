@@ -12,57 +12,57 @@ namespace FoxCalc
         public double a, b;
         public int temp;
         public bool znak = true;
-        private void N0_Click(object sender, EventArgs e) // кнопка "0"
+        private void N0_Click(object sender, EventArgs e) // Кнопка "0"
         {
             box1.Text = box1.Text + 0;
             label1.Text = label1.Text + "0";
         }
-        private void N1_Click(object sender, EventArgs e) // кнопка "1"
+        private void N1_Click(object sender, EventArgs e) // Кнопка "1"
         {
             box1.Text = box1.Text + 1;
             label1.Text = label1.Text + "1";
         }
-        private void N2_Click(object sender, EventArgs e) // кнопка "2"
+        private void N2_Click(object sender, EventArgs e) // Кнопка "2"
         {
             box1.Text = box1.Text + 2;
             label1.Text = label1.Text + "2";
         }
-        private void N3_Click(object sender, EventArgs e) // кнопка "3"
+        private void N3_Click(object sender, EventArgs e) // Кнопка "3"
         {
             box1.Text = box1.Text + 3;
             label1.Text = label1.Text + "3";
         }
-        private void N4_Click(object sender, EventArgs e) // кнопка "4"
+        private void N4_Click(object sender, EventArgs e) // Кнопка "4"
         {
             box1.Text = box1.Text + 4;
             label1.Text = label1.Text + "4";
         }
-        private void N5_Click(object sender, EventArgs e) // кнопка "5"
+        private void N5_Click(object sender, EventArgs e) // Кнопка "5"
         {
             box1.Text = box1.Text + 5;
             label1.Text = label1.Text + "5";
         }
-        private void N6_Click(object sender, EventArgs e) // кнопка "6"
+        private void N6_Click(object sender, EventArgs e) // Кнопка "6"
         {
             box1.Text = box1.Text + 6;
             label1.Text = label1.Text + "6";
         }
-        private void N7_Click(object sender, EventArgs e) // кнопка "7"
+        private void N7_Click(object sender, EventArgs e) // Кнопка "7"
         {
             box1.Text = box1.Text + 7;
             label1.Text = label1.Text + "7";
         }
-        private void N8_Click(object sender, EventArgs e) // кнопка "8"
+        private void N8_Click(object sender, EventArgs e) // Кнопка "8"
         {
             box1.Text = box1.Text + 8;
             label1.Text = label1.Text + "8";
         }
-        private void N9_Click(object sender, EventArgs e) // кнопка "9"
+        private void N9_Click(object sender, EventArgs e) // Кнопка "9"
         {
             box1.Text = box1.Text + 9;
             label1.Text = label1.Text + "9";
         }
-        private void Plus_Click(object sender, EventArgs e) // сложение
+        private void Plus_Click(object sender, EventArgs e) // Сложение
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}+";
@@ -72,7 +72,7 @@ namespace FoxCalc
             znak = true;
             label2.Text = "+";
         }
-        private void Minus_Click(object sender, EventArgs e) // вычитание
+        private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}-";
@@ -82,7 +82,7 @@ namespace FoxCalc
             znak = true;
             label2.Text = "-";
         }
-        private void Multiply_Click(object sender, EventArgs e) // умножение
+        private void Multiply_Click(object sender, EventArgs e) // Умножение
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}*";
@@ -92,7 +92,7 @@ namespace FoxCalc
             znak = true;
             label2.Text = "*";
         }
-        private void Segment_Click(object sender, EventArgs e) // деление
+        private void Segment_Click(object sender, EventArgs e) // Деление
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}/";
@@ -102,12 +102,12 @@ namespace FoxCalc
             znak = true;
             label2.Text = "/";
         }
-        private void Equal_Click(object sender, EventArgs e) // кнопка равно
+        private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
             Calc(temp);
             box1.Text = Convert.ToString(b);
         }
-        private void Clear_Click(object sender, EventArgs e) // кнопка очистки
+        private void Clear_Click(object sender, EventArgs e) // Кнопка очистки
         {
             label1.Text = "";
             label2.Text = "";
@@ -115,7 +115,7 @@ namespace FoxCalc
             a = 0;
             b = 0;
         }
-        private void Sin_Click(object sender, EventArgs e) // синус
+        private void Sin_Click(object sender, EventArgs e) // Синус
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Sin {a}";
@@ -124,7 +124,7 @@ namespace FoxCalc
             znak = true;
             label2.Text = "Sin";
         }
-        private void Cos_Click(object sender, EventArgs e) // косинус
+        private void Cos_Click(object sender, EventArgs e) // Косинус
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Cos {a}";
@@ -134,7 +134,7 @@ namespace FoxCalc
             label2.Text = "Cos";
         }
 
-        private void Tang_Click(object sender, EventArgs e) // тангенс
+        private void Tang_Click(object sender, EventArgs e) // Тангенс
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Tg {a}";
@@ -144,7 +144,7 @@ namespace FoxCalc
             label2.Text = "Tg";
         }
 
-        private void Ctg_Click(object sender, EventArgs e) // котангенс
+        private void Ctg_Click(object sender, EventArgs e) // Котангенс
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Сtg {a}";
@@ -154,7 +154,7 @@ namespace FoxCalc
             label2.Text = "Сtg";
         }
 
-        private void Sign_Click(object sender, EventArgs e) // кнопка +/-
+        private void Sign_Click(object sender, EventArgs e) // Кнопка +/-
         {
             if (znak == true)
             {
@@ -168,7 +168,7 @@ namespace FoxCalc
             }
         }
 
-        private void Square_Click(object sender, EventArgs e) // возведение в степень
+        private void Square_Click(object sender, EventArgs e) // Возведение в степень
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"X^2 {a}";
@@ -178,7 +178,7 @@ namespace FoxCalc
             label2.Text = "x^2";
         }
 
-        private void Exp_Click(object sender, EventArgs e)
+        private void Exp_Click(object sender, EventArgs e) // Экспонента
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Exp {a}";
@@ -188,7 +188,7 @@ namespace FoxCalc
             label2.Text = "exp";
         }
 
-        private void Sqrt_Click(object sender, EventArgs e)
+        private void Sqrt_Click(object sender, EventArgs e) // Квадратный корень
         {
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"sqrt {a}";
@@ -198,7 +198,7 @@ namespace FoxCalc
             label2.Text = "sqrt";
         }
 
-        public void Calc(int temp) // кнопка =
+        public void Calc(int temp) // Кнопка =
         {
             switch (temp)
             {
