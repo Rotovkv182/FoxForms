@@ -94,8 +94,6 @@ namespace FoxCalc
         }
         private void Segment_Click(object sender, EventArgs e) // Деление
         {
-            try
-            {
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"{a}/";  
                 box1.Clear();
@@ -103,7 +101,6 @@ namespace FoxCalc
                 temp = 4;
                 znak = true;
                 label2.Text = "/";
-            }
         }
         private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
