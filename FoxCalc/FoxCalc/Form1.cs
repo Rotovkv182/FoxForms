@@ -94,18 +94,28 @@ namespace FoxCalc
         }
         private void Segment_Click(object sender, EventArgs e) // Деление
         {
-            a = Convert.ToInt32(box1.Text);
-            label1.Text = $"{a}/";
-            box1.Clear();
-            box1.Focus();
-            temp = 4;
-            znak = true;
-            label2.Text = "/";
+            try
+            {
+                a = Convert.ToInt32(box1.Text);
+                label1.Text = $"{a}/";  
+                box1.Clear();
+                box1.Focus();
+                temp = 4;
+                znak = true;
+                label2.Text = "/";
+            }
         }
         private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
-            Calc(temp);
-            box1.Text = Convert.ToString(b);
+            try
+            {
+                Calc(temp);
+                box1.Text = Convert.ToString(b);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Введено нечисловое значение", "Ошибка");
+            }
         }
         private void Clear_Click(object sender, EventArgs e) // Кнопка очистки
         {
@@ -196,6 +206,11 @@ namespace FoxCalc
             temp = 11;
             znak = true;
             label2.Text = "sqrt";
+        }
+
+        private void StrokeCalc_Click(object sender, EventArgs e)
+        {
+            
         }
 
         public void Calc(int temp) // Кнопка =
