@@ -59,15 +59,16 @@
             this.n7 = new System.Windows.Forms.Button();
             this.box1 = new System.Windows.Forms.TextBox();
             this.StrokeCalc = new System.Windows.Forms.TabPage();
-            this.ConvertCalc = new System.Windows.Forms.TabPage();
-            this.InputBox = new System.Windows.Forms.TextBox();
-            this.Conout = new System.Windows.Forms.TextBox();
-            this.Iniout = new System.Windows.Forms.TextBox();
-            this.taskout = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.taskout = new System.Windows.Forms.TextBox();
+            this.Iniout = new System.Windows.Forms.TextBox();
+            this.Conout = new System.Windows.Forms.TextBox();
+            this.InputBox = new System.Windows.Forms.TextBox();
+            this.ConvertCalc = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             this.MainCalc.BackColor = System.Drawing.Color.Transparent;
             this.MainCalc.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc5;
+            this.MainCalc.Controls.Add(this.label3);
             this.MainCalc.Controls.Add(this.sign);
             this.MainCalc.Controls.Add(this.sqrt);
             this.MainCalc.Controls.Add(this.exp);
@@ -605,64 +607,14 @@
             this.StrokeCalc.Text = "Строковый";
             this.StrokeCalc.Click += new System.EventHandler(this.StrokeCalc_Click);
             // 
-            // ConvertCalc
+            // button5
             // 
-            this.ConvertCalc.Location = new System.Drawing.Point(4, 28);
-            this.ConvertCalc.Name = "ConvertCalc";
-            this.ConvertCalc.Size = new System.Drawing.Size(378, 438);
-            this.ConvertCalc.TabIndex = 2;
-            this.ConvertCalc.Text = "Конверторы";
-            this.ConvertCalc.UseVisualStyleBackColor = true;
-            // 
-            // InputBox
-            // 
-            this.InputBox.Location = new System.Drawing.Point(58, 13);
-            this.InputBox.Multiline = true;
-            this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(260, 51);
-            this.InputBox.TabIndex = 0;
-            // 
-            // Conout
-            // 
-            this.Conout.Location = new System.Drawing.Point(253, 155);
-            this.Conout.Multiline = true;
-            this.Conout.Name = "Conout";
-            this.Conout.Size = new System.Drawing.Size(116, 33);
-            this.Conout.TabIndex = 1;
-            // 
-            // Iniout
-            // 
-            this.Iniout.Location = new System.Drawing.Point(253, 233);
-            this.Iniout.Multiline = true;
-            this.Iniout.Name = "Iniout";
-            this.Iniout.Size = new System.Drawing.Size(116, 33);
-            this.Iniout.TabIndex = 2;
-            // 
-            // taskout
-            // 
-            this.taskout.Location = new System.Drawing.Point(253, 305);
-            this.taskout.Multiline = true;
-            this.taskout.Name = "taskout";
-            this.taskout.Size = new System.Drawing.Size(116, 33);
-            this.taskout.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(9, 233);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 33);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(117, 75);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 33);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -673,14 +625,75 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // button2
             // 
-            this.button5.Location = new System.Drawing.Point(117, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 33);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(9, 233);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 33);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 155);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 33);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // taskout
+            // 
+            this.taskout.Location = new System.Drawing.Point(253, 305);
+            this.taskout.Multiline = true;
+            this.taskout.Name = "taskout";
+            this.taskout.Size = new System.Drawing.Size(116, 33);
+            this.taskout.TabIndex = 3;
+            // 
+            // Iniout
+            // 
+            this.Iniout.Location = new System.Drawing.Point(253, 233);
+            this.Iniout.Multiline = true;
+            this.Iniout.Name = "Iniout";
+            this.Iniout.Size = new System.Drawing.Size(116, 33);
+            this.Iniout.TabIndex = 2;
+            // 
+            // Conout
+            // 
+            this.Conout.Location = new System.Drawing.Point(253, 155);
+            this.Conout.Multiline = true;
+            this.Conout.Name = "Conout";
+            this.Conout.Size = new System.Drawing.Size(116, 33);
+            this.Conout.TabIndex = 1;
+            // 
+            // InputBox
+            // 
+            this.InputBox.Location = new System.Drawing.Point(58, 13);
+            this.InputBox.Multiline = true;
+            this.InputBox.Name = "InputBox";
+            this.InputBox.Size = new System.Drawing.Size(260, 51);
+            this.InputBox.TabIndex = 0;
+            // 
+            // ConvertCalc
+            // 
+            this.ConvertCalc.Location = new System.Drawing.Point(4, 28);
+            this.ConvertCalc.Name = "ConvertCalc";
+            this.ConvertCalc.Size = new System.Drawing.Size(378, 438);
+            this.ConvertCalc.TabIndex = 2;
+            this.ConvertCalc.Text = "Конверторы";
+            this.ConvertCalc.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(16, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.TabIndex = 57;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -744,6 +757,7 @@
         private System.Windows.Forms.TextBox Iniout;
         private System.Windows.Forms.TextBox Conout;
         private System.Windows.Forms.TextBox InputBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 
