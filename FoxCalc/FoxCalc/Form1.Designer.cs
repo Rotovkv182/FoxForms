@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainCalc = new System.Windows.Forms.TabPage();
+            this.hex = new System.Windows.Forms.RadioButton();
+            this.oct = new System.Windows.Forms.RadioButton();
+            this.bin = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.sign = new System.Windows.Forms.Button();
             this.sqrt = new System.Windows.Forms.Button();
             this.exp = new System.Windows.Forms.Button();
@@ -68,7 +72,7 @@
             this.Conout = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.ConvertCalc = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dec = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -84,13 +88,17 @@
             this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(386, 470);
+            this.tabControl1.Size = new System.Drawing.Size(462, 470);
             this.tabControl1.TabIndex = 29;
             // 
             // MainCalc
             // 
             this.MainCalc.BackColor = System.Drawing.Color.Transparent;
-            this.MainCalc.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc5;
+            this.MainCalc.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc9;
+            this.MainCalc.Controls.Add(this.dec);
+            this.MainCalc.Controls.Add(this.hex);
+            this.MainCalc.Controls.Add(this.oct);
+            this.MainCalc.Controls.Add(this.bin);
             this.MainCalc.Controls.Add(this.label3);
             this.MainCalc.Controls.Add(this.sign);
             this.MainCalc.Controls.Add(this.sqrt);
@@ -123,9 +131,62 @@
             this.MainCalc.Location = new System.Drawing.Point(4, 28);
             this.MainCalc.Name = "MainCalc";
             this.MainCalc.Padding = new System.Windows.Forms.Padding(3);
-            this.MainCalc.Size = new System.Drawing.Size(378, 438);
+            this.MainCalc.Size = new System.Drawing.Size(454, 438);
             this.MainCalc.TabIndex = 0;
             this.MainCalc.Text = "Основной";
+            // 
+            // hex
+            // 
+            this.hex.AutoSize = true;
+            this.hex.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.hex.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hex.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.hex.Location = new System.Drawing.Point(386, 374);
+            this.hex.Name = "hex";
+            this.hex.Size = new System.Drawing.Size(54, 42);
+            this.hex.TabIndex = 60;
+            this.hex.Text = "hex";
+            this.hex.UseVisualStyleBackColor = true;
+            this.hex.CheckedChanged += new System.EventHandler(this.Hex_CheckedChanged);
+            // 
+            // oct
+            // 
+            this.oct.AutoSize = true;
+            this.oct.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.oct.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oct.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.oct.Location = new System.Drawing.Point(383, 270);
+            this.oct.Name = "oct";
+            this.oct.Size = new System.Drawing.Size(60, 42);
+            this.oct.TabIndex = 59;
+            this.oct.Text = "oct";
+            this.oct.UseVisualStyleBackColor = true;
+            this.oct.CheckedChanged += new System.EventHandler(this.Oct_CheckedChanged);
+            // 
+            // bin
+            // 
+            this.bin.AutoSize = true;
+            this.bin.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bin.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bin.Location = new System.Drawing.Point(387, 163);
+            this.bin.Name = "bin";
+            this.bin.Size = new System.Drawing.Size(51, 42);
+            this.bin.TabIndex = 58;
+            this.bin.Text = "bin";
+            this.bin.UseVisualStyleBackColor = true;
+            this.bin.CheckedChanged += new System.EventHandler(this.Bin_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(20, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.TabIndex = 57;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // sign
             // 
@@ -135,7 +196,7 @@
             this.sign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sign.Font = new System.Drawing.Font("Code Pro", 16F);
             this.sign.ForeColor = System.Drawing.Color.Transparent;
-            this.sign.Location = new System.Drawing.Point(318, 167);
+            this.sign.Location = new System.Drawing.Point(322, 164);
             this.sign.Name = "sign";
             this.sign.Size = new System.Drawing.Size(55, 42);
             this.sign.TabIndex = 56;
@@ -152,7 +213,7 @@
             this.sqrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sqrt.Font = new System.Drawing.Font("Code Pro", 12F);
             this.sqrt.ForeColor = System.Drawing.Color.Transparent;
-            this.sqrt.Location = new System.Drawing.Point(314, 381);
+            this.sqrt.Location = new System.Drawing.Point(318, 378);
             this.sqrt.Name = "sqrt";
             this.sqrt.Size = new System.Drawing.Size(60, 42);
             this.sqrt.TabIndex = 55;
@@ -169,7 +230,7 @@
             this.exp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exp.Font = new System.Drawing.Font("Code Pro", 12F);
             this.exp.ForeColor = System.Drawing.Color.Transparent;
-            this.exp.Location = new System.Drawing.Point(320, 309);
+            this.exp.Location = new System.Drawing.Point(324, 306);
             this.exp.Name = "exp";
             this.exp.Size = new System.Drawing.Size(45, 42);
             this.exp.TabIndex = 54;
@@ -187,7 +248,7 @@
             this.square.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.square.Font = new System.Drawing.Font("Code Pro", 14F);
             this.square.ForeColor = System.Drawing.Color.Transparent;
-            this.square.Location = new System.Drawing.Point(315, 239);
+            this.square.Location = new System.Drawing.Point(321, 235);
             this.square.Name = "square";
             this.square.Size = new System.Drawing.Size(55, 42);
             this.square.TabIndex = 53;
@@ -204,7 +265,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Code Pro", 14F);
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(314, 180);
+            this.button4.Location = new System.Drawing.Point(318, 177);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 42);
             this.button4.TabIndex = 52;
@@ -219,7 +280,7 @@
             this.ctg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ctg.Font = new System.Drawing.Font("Code Pro", 14F);
             this.ctg.ForeColor = System.Drawing.Color.Transparent;
-            this.ctg.Location = new System.Drawing.Point(252, 381);
+            this.ctg.Location = new System.Drawing.Point(256, 378);
             this.ctg.Name = "ctg";
             this.ctg.Size = new System.Drawing.Size(60, 42);
             this.ctg.TabIndex = 51;
@@ -236,7 +297,7 @@
             this.tang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tang.Font = new System.Drawing.Font("Code Pro", 14F);
             this.tang.ForeColor = System.Drawing.Color.Transparent;
-            this.tang.Location = new System.Drawing.Point(257, 309);
+            this.tang.Location = new System.Drawing.Point(261, 306);
             this.tang.Name = "tang";
             this.tang.Size = new System.Drawing.Size(50, 42);
             this.tang.TabIndex = 50;
@@ -253,7 +314,7 @@
             this.cos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cos.Font = new System.Drawing.Font("Code Pro", 14F);
             this.cos.ForeColor = System.Drawing.Color.Transparent;
-            this.cos.Location = new System.Drawing.Point(250, 239);
+            this.cos.Location = new System.Drawing.Point(256, 235);
             this.cos.Name = "cos";
             this.cos.Size = new System.Drawing.Size(60, 42);
             this.cos.TabIndex = 49;
@@ -270,7 +331,7 @@
             this.sin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sin.Font = new System.Drawing.Font("Code Pro", 14F);
             this.sin.ForeColor = System.Drawing.Color.Transparent;
-            this.sin.Location = new System.Drawing.Point(256, 168);
+            this.sin.Location = new System.Drawing.Point(260, 163);
             this.sin.Name = "sin";
             this.sin.Size = new System.Drawing.Size(50, 42);
             this.sin.TabIndex = 48;
@@ -310,7 +371,7 @@
             this.n9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n9.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n9.ForeColor = System.Drawing.Color.Transparent;
-            this.n9.Location = new System.Drawing.Point(143, 164);
+            this.n9.Location = new System.Drawing.Point(147, 161);
             this.n9.Name = "n9";
             this.n9.Size = new System.Drawing.Size(29, 42);
             this.n9.TabIndex = 45;
@@ -327,7 +388,7 @@
             this.segment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.segment.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.segment.ForeColor = System.Drawing.Color.Transparent;
-            this.segment.Location = new System.Drawing.Point(203, 378);
+            this.segment.Location = new System.Drawing.Point(208, 375);
             this.segment.Name = "segment";
             this.segment.Size = new System.Drawing.Size(29, 42);
             this.segment.TabIndex = 44;
@@ -344,7 +405,7 @@
             this.equal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.equal.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.equal.ForeColor = System.Drawing.Color.Transparent;
-            this.equal.Location = new System.Drawing.Point(143, 378);
+            this.equal.Location = new System.Drawing.Point(147, 372);
             this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(29, 42);
             this.equal.TabIndex = 43;
@@ -361,7 +422,7 @@
             this.n0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n0.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n0.ForeColor = System.Drawing.Color.Transparent;
-            this.n0.Location = new System.Drawing.Point(82, 378);
+            this.n0.Location = new System.Drawing.Point(86, 375);
             this.n0.Name = "n0";
             this.n0.Size = new System.Drawing.Size(29, 42);
             this.n0.TabIndex = 42;
@@ -378,7 +439,7 @@
             this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.clear.ForeColor = System.Drawing.Color.Transparent;
-            this.clear.Location = new System.Drawing.Point(19, 378);
+            this.clear.Location = new System.Drawing.Point(23, 375);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(29, 42);
             this.clear.TabIndex = 41;
@@ -395,7 +456,7 @@
             this.multiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.multiply.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.multiply.ForeColor = System.Drawing.Color.Transparent;
-            this.multiply.Location = new System.Drawing.Point(204, 307);
+            this.multiply.Location = new System.Drawing.Point(209, 304);
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(29, 42);
             this.multiply.TabIndex = 40;
@@ -412,7 +473,7 @@
             this.n3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n3.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n3.ForeColor = System.Drawing.Color.Transparent;
-            this.n3.Location = new System.Drawing.Point(143, 307);
+            this.n3.Location = new System.Drawing.Point(147, 304);
             this.n3.Name = "n3";
             this.n3.Size = new System.Drawing.Size(29, 42);
             this.n3.TabIndex = 39;
@@ -429,7 +490,7 @@
             this.n2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n2.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n2.ForeColor = System.Drawing.Color.Transparent;
-            this.n2.Location = new System.Drawing.Point(82, 307);
+            this.n2.Location = new System.Drawing.Point(86, 304);
             this.n2.Name = "n2";
             this.n2.Size = new System.Drawing.Size(29, 42);
             this.n2.TabIndex = 38;
@@ -446,7 +507,7 @@
             this.n1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n1.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n1.ForeColor = System.Drawing.Color.Transparent;
-            this.n1.Location = new System.Drawing.Point(19, 306);
+            this.n1.Location = new System.Drawing.Point(23, 303);
             this.n1.Name = "n1";
             this.n1.Size = new System.Drawing.Size(29, 42);
             this.n1.TabIndex = 37;
@@ -463,7 +524,7 @@
             this.minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minus.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.minus.ForeColor = System.Drawing.Color.Transparent;
-            this.minus.Location = new System.Drawing.Point(204, 235);
+            this.minus.Location = new System.Drawing.Point(209, 232);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(29, 42);
             this.minus.TabIndex = 36;
@@ -480,7 +541,7 @@
             this.n6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n6.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n6.ForeColor = System.Drawing.Color.Transparent;
-            this.n6.Location = new System.Drawing.Point(143, 235);
+            this.n6.Location = new System.Drawing.Point(147, 232);
             this.n6.Name = "n6";
             this.n6.Size = new System.Drawing.Size(29, 42);
             this.n6.TabIndex = 35;
@@ -497,7 +558,7 @@
             this.n5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n5.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n5.ForeColor = System.Drawing.Color.Transparent;
-            this.n5.Location = new System.Drawing.Point(82, 235);
+            this.n5.Location = new System.Drawing.Point(86, 232);
             this.n5.Name = "n5";
             this.n5.Size = new System.Drawing.Size(29, 42);
             this.n5.TabIndex = 34;
@@ -514,7 +575,7 @@
             this.n4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n4.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n4.ForeColor = System.Drawing.Color.Transparent;
-            this.n4.Location = new System.Drawing.Point(19, 235);
+            this.n4.Location = new System.Drawing.Point(23, 232);
             this.n4.Name = "n4";
             this.n4.Size = new System.Drawing.Size(29, 42);
             this.n4.TabIndex = 33;
@@ -531,7 +592,7 @@
             this.plus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plus.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.plus.ForeColor = System.Drawing.Color.Transparent;
-            this.plus.Location = new System.Drawing.Point(204, 164);
+            this.plus.Location = new System.Drawing.Point(209, 161);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(29, 42);
             this.plus.TabIndex = 32;
@@ -548,7 +609,7 @@
             this.n8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n8.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n8.ForeColor = System.Drawing.Color.Transparent;
-            this.n8.Location = new System.Drawing.Point(82, 164);
+            this.n8.Location = new System.Drawing.Point(86, 161);
             this.n8.Name = "n8";
             this.n8.Size = new System.Drawing.Size(29, 42);
             this.n8.TabIndex = 31;
@@ -565,7 +626,7 @@
             this.n7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.n7.Font = new System.Drawing.Font("Code Pro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(77)));
             this.n7.ForeColor = System.Drawing.Color.Transparent;
-            this.n7.Location = new System.Drawing.Point(19, 164);
+            this.n7.Location = new System.Drawing.Point(23, 161);
             this.n7.Name = "n7";
             this.n7.Size = new System.Drawing.Size(29, 42);
             this.n7.TabIndex = 30;
@@ -602,10 +663,9 @@
             this.StrokeCalc.Location = new System.Drawing.Point(4, 28);
             this.StrokeCalc.Name = "StrokeCalc";
             this.StrokeCalc.Padding = new System.Windows.Forms.Padding(3);
-            this.StrokeCalc.Size = new System.Drawing.Size(378, 438);
+            this.StrokeCalc.Size = new System.Drawing.Size(454, 438);
             this.StrokeCalc.TabIndex = 1;
             this.StrokeCalc.Text = "Строковый";
-            this.StrokeCalc.Click += new System.EventHandler(this.StrokeCalc_Click);
             // 
             // button5
             // 
@@ -679,21 +739,24 @@
             // 
             this.ConvertCalc.Location = new System.Drawing.Point(4, 28);
             this.ConvertCalc.Name = "ConvertCalc";
-            this.ConvertCalc.Size = new System.Drawing.Size(378, 438);
+            this.ConvertCalc.Size = new System.Drawing.Size(454, 438);
             this.ConvertCalc.TabIndex = 2;
             this.ConvertCalc.Text = "Конверторы";
             this.ConvertCalc.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // dec
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Code Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(16, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 19);
-            this.label3.TabIndex = 57;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dec.AutoSize = true;
+            this.dec.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dec.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dec.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dec.Location = new System.Drawing.Point(384, 58);
+            this.dec.Name = "dec";
+            this.dec.Size = new System.Drawing.Size(58, 42);
+            this.dec.TabIndex = 61;
+            this.dec.Text = "dec";
+            this.dec.UseVisualStyleBackColor = true;
+            this.dec.CheckedChanged += new System.EventHandler(this.Dec_CheckedChanged);
             // 
             // Form1
             // 
@@ -702,7 +765,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc5;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(384, 468);
+            this.ClientSize = new System.Drawing.Size(460, 468);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -758,6 +821,10 @@
         private System.Windows.Forms.TextBox Conout;
         private System.Windows.Forms.TextBox InputBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton bin;
+        private System.Windows.Forms.RadioButton hex;
+        private System.Windows.Forms.RadioButton oct;
+        private System.Windows.Forms.RadioButton dec;
     }
 }
 

@@ -64,14 +64,15 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-            try { 
-            a = Convert.ToInt32(box1.Text);
-            label1.Text = $"{a}+";
-            box1.Clear();
-            box1.Focus();
-            temp = 1;
-            znak = true;
-            label2.Text = "+";
+            try
+            {
+                a = Convert.ToInt32(box1.Text);
+                label1.Text = $"{a}+";
+                box1.Clear();
+                box1.Focus();
+                temp = 1;
+                znak = true;
+                label2.Text = "+";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -150,7 +151,7 @@ namespace FoxCalc
                 Calc(temp);
                 box1.Text = Convert.ToString(b);
             }
-            catch (FormatException) 
+            catch (FormatException)
             {
                 if (String.IsNullOrEmpty(box1.Text)) // проверка строки на 0 или пустоту
                 {
@@ -333,10 +334,36 @@ namespace FoxCalc
                 label3.Text = "Нажмите кнопку C, чтобы стереть.";
             }
         }
-
-        private void StrokeCalc_Click(object sender, EventArgs e)
+        private void Oct_CheckedChanged(object sender, EventArgs e) // перевод в восьмиричную сс
         {
-            
+            int s = Convert.ToInt32(box1.Text);
+            label1.Text = $"oct {s}";
+            box1.Text = Convert.ToString(s, 8);
+            label2.Text = "oct";
+        }
+
+        private void Bin_CheckedChanged(object sender, EventArgs e) // двоичная сс
+        {
+            int s = Convert.ToInt32(box1.Text);
+            label1.Text = $"bin {s}";
+            box1.Text = Convert.ToString(s, 2);
+            label2.Text = "bin";
+        }
+
+        private void Hex_CheckedChanged(object sender, EventArgs e) // 16-ричная сс
+        {
+            int s = Convert.ToInt32(box1.Text);
+            label1.Text = $"hex {s}";
+            box1.Text = Convert.ToString(s, 16);
+            label2.Text = "hex";
+        }
+
+        private void Dec_CheckedChanged(object sender, EventArgs e) // десятичная сс
+        {
+            int s = Convert.ToInt32(box1.Text);
+            label1.Text = $"dec {s}";
+            box1.Text = Convert.ToString(s, 10);
+            label2.Text = "dec";
         }
 
         public void Calc(int temp) // Кнопка =
