@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainCalc = new System.Windows.Forms.TabPage();
+            this.dec = new System.Windows.Forms.RadioButton();
             this.hex = new System.Windows.Forms.RadioButton();
             this.oct = new System.Windows.Forms.RadioButton();
             this.bin = new System.Windows.Forms.RadioButton();
@@ -72,7 +73,6 @@
             this.Conout = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.ConvertCalc = new System.Windows.Forms.TabPage();
-            this.dec = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -134,6 +134,20 @@
             this.MainCalc.Size = new System.Drawing.Size(454, 438);
             this.MainCalc.TabIndex = 0;
             this.MainCalc.Text = "Основной";
+            // 
+            // dec
+            // 
+            this.dec.AutoSize = true;
+            this.dec.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dec.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dec.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dec.Location = new System.Drawing.Point(384, 58);
+            this.dec.Name = "dec";
+            this.dec.Size = new System.Drawing.Size(58, 42);
+            this.dec.TabIndex = 61;
+            this.dec.Text = "dec";
+            this.dec.UseVisualStyleBackColor = true;
+            this.dec.CheckedChanged += new System.EventHandler(this.Dec_CheckedChanged);
             // 
             // hex
             // 
@@ -743,20 +757,6 @@
             this.ConvertCalc.TabIndex = 2;
             this.ConvertCalc.Text = "Конверторы";
             this.ConvertCalc.UseVisualStyleBackColor = true;
-            // 
-            // dec
-            // 
-            this.dec.AutoSize = true;
-            this.dec.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.dec.Font = new System.Drawing.Font("Code Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dec.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dec.Location = new System.Drawing.Point(384, 58);
-            this.dec.Name = "dec";
-            this.dec.Size = new System.Drawing.Size(58, 42);
-            this.dec.TabIndex = 61;
-            this.dec.Text = "dec";
-            this.dec.UseVisualStyleBackColor = true;
-            this.dec.CheckedChanged += new System.EventHandler(this.Dec_CheckedChanged);
             // 
             // Form1
             // 

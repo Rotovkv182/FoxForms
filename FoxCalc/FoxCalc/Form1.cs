@@ -64,8 +64,7 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-            try
-            {
+                except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"{a}+";
                 box1.Clear();
@@ -73,19 +72,11 @@ namespace FoxCalc
                 temp = 1;
                 znak = true;
                 label2.Text = "+";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
+                
         }
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
-            try { 
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}-";
             box1.Clear();
@@ -93,19 +84,10 @@ namespace FoxCalc
             temp = 2;
             znak = true;
             label2.Text = "-";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Multiply_Click(object sender, EventArgs e) // Умножение
         {
-            try { 
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}*";
             box1.Clear();
@@ -113,20 +95,10 @@ namespace FoxCalc
             temp = 3;
             znak = true;
             label2.Text = "*";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Segment_Click(object sender, EventArgs e) // Деление
         {
-            try
-            {
+                except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"{a}/";
                 box1.Clear();
@@ -134,38 +106,12 @@ namespace FoxCalc
                 temp = 4;
                 znak = true;
                 label2.Text = "/";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-                {
-                    MessageBox.Show("Введено нечисловое значение", "Ошибка");
-                }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
-            try
-            {
-                Calc(temp);
+                except(box1.Text);
+                 Calc(temp);
                 box1.Text = Convert.ToString(b);
-            }
-            catch (FormatException)
-            {
-                if (String.IsNullOrEmpty(box1.Text)) // проверка строки на 0 или пустоту
-                {
-                    MessageBox.Show("Строка не должна быть пустая");
-                }
-                else // ошибка если в TextBox введена не цифра
-                {
-                    MessageBox.Show("Введено нечисловое значение", "Ошибка");
-                }
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Clear_Click(object sender, EventArgs e) // Кнопка очистки
         {
@@ -178,85 +124,45 @@ namespace FoxCalc
         }
         private void Sin_Click(object sender, EventArgs e) // Синус
         {
-            try
-            {
+                except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"Sin {a}";
                 box1.Clear();
                 temp = 5;
                 znak = true;
                 label2.Text = "Sin";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Cos_Click(object sender, EventArgs e) // Косинус
         {
-            try
-            {
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Cos {a}";
             box1.Clear();
             temp = 6;
             znak = true;
             label2.Text = "Cos";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
 
         private void Tang_Click(object sender, EventArgs e) // Тангенс
         {
-            try
-            {
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Tg {a}";
             box1.Clear();
             temp = 7;
             znak = true;
             label2.Text = "Tg";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка"); 
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
 
         private void Ctg_Click(object sender, EventArgs e) // Котангенс
         {
-            try
-            {
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Сtg {a}";
             box1.Clear();
             temp = 8;
             znak = true;
             label2.Text = "Сtg";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
 
         private void Sign_Click(object sender, EventArgs e) // Кнопка +/-
@@ -275,47 +181,28 @@ namespace FoxCalc
 
         private void Square_Click(object sender, EventArgs e) // Возведение в степень
         {
-            try {
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"X^2 {a}";
             box1.Clear();
             temp = 9;
             znak = true;
             label2.Text = "x^2";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
-
         private void Exp_Click(object sender, EventArgs e) // Экспонента
         {
-            try {
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Exp {a}";
             box1.Clear();
             temp = 10;
             znak = true;
             label2.Text = "exp";
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
 
         private void Sqrt_Click(object sender, EventArgs e) // Квадратный корень
         {
-            try { 
+            except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"sqrt {a}";
             box1.Clear();
@@ -324,15 +211,6 @@ namespace FoxCalc
             label2.Text = "sqrt";
                 if (a < 0)  // если число а отрицательное, то выдает ошибку
                 MessageBox.Show("Корень из отрицательного числа выводить нельзя", "Ошибка");
-            }
-            catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
-            finally // "Подсказка"
-            {
-                label3.Text = "Нажмите кнопку C, чтобы стереть.";
-            }
         }
         private void Oct_CheckedChanged(object sender, EventArgs e) // перевод в восьмиричную сс
         {
@@ -365,7 +243,6 @@ namespace FoxCalc
             box1.Text = Convert.ToString(s, 10);
             label2.Text = "dec";
         }
-
         public void Calc(int temp) // Кнопка =
         {
             switch (temp)
@@ -416,6 +293,18 @@ namespace FoxCalc
                     break;
                 default:
                     break;
+            }
+        }
+        public void except(string box1)
+        {
+            try
+            {
+                int i = Convert.ToInt32(box1);
+                box1 = Convert.ToString(i);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введено нечисловое значение!", "Ошибка");// исключение на ввод букв
             }
         }
     }
