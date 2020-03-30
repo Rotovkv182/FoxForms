@@ -64,9 +64,9 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-                except(box1.Text);
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}+";
+           except(box1.Text);
+           a = Convert.ToInt32(box1.Text);
+           label1.Text = $"{a}+";
                 box1.Clear();
                 box1.Focus();
                 temp = 1;
