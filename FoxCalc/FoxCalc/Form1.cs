@@ -64,15 +64,14 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}+";
-                box1.Clear();
-                box1.Focus();
-                temp = 1;
-                znak = true;
-                label2.Text = "+";
+            try { 
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"{a}+";
+            box1.Clear();
+            box1.Focus();
+            temp = 1;
+            znak = true;
+            label2.Text = "+";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -85,15 +84,14 @@ namespace FoxCalc
         }
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}-";
-                box1.Clear();
-                box1.Focus();
-                temp = 2;
-                znak = true;
-                label2.Text = "-";
+            try { 
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"{a}-";
+            box1.Clear();
+            box1.Focus();
+            temp = 2;
+            znak = true;
+            label2.Text = "-";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -106,15 +104,14 @@ namespace FoxCalc
         }
         private void Multiply_Click(object sender, EventArgs e) // Умножение
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}*";
-                box1.Clear();
-                box1.Focus();
-                temp = 3;
-                znak = true;
-                label2.Text = "*";
+            try { 
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"{a}*";
+            box1.Clear();
+            box1.Focus();
+            temp = 3;
+            znak = true;
+            label2.Text = "*";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -138,9 +135,9 @@ namespace FoxCalc
                 label2.Text = "/";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
-            {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
-            }
+                {
+                    MessageBox.Show("Введено нечисловое значение", "Ошибка");
+                }
             finally // "Подсказка"
             {
                 label3.Text = "Нажмите кнопку C, чтобы стереть.";
@@ -153,7 +150,7 @@ namespace FoxCalc
                 Calc(temp);
                 box1.Text = Convert.ToString(b);
             }
-            catch (FormatException)
+            catch (FormatException) 
             {
                 if (String.IsNullOrEmpty(box1.Text)) // проверка строки на 0 или пустоту
                 {
@@ -202,12 +199,12 @@ namespace FoxCalc
         {
             try
             {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"Cos {a}";
-                box1.Clear();
-                temp = 6;
-                znak = true;
-                label2.Text = "Cos";
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"Cos {a}";
+            box1.Clear();
+            temp = 6;
+            znak = true;
+            label2.Text = "Cos";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -223,16 +220,16 @@ namespace FoxCalc
         {
             try
             {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"Tg {a}";
-                box1.Clear();
-                temp = 7;
-                znak = true;
-                label2.Text = "Tg";
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"Tg {a}";
+            box1.Clear();
+            temp = 7;
+            znak = true;
+            label2.Text = "Tg";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
-                MessageBox.Show("Введено нечисловое значение", "Ошибка");
+                MessageBox.Show("Введено нечисловое значение", "Ошибка"); 
             }
             finally // "Подсказка"
             {
@@ -244,12 +241,12 @@ namespace FoxCalc
         {
             try
             {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"Сtg {a}";
-                box1.Clear();
-                temp = 8;
-                znak = true;
-                label2.Text = "Сtg";
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"Сtg {a}";
+            box1.Clear();
+            temp = 8;
+            znak = true;
+            label2.Text = "Сtg";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -277,14 +274,13 @@ namespace FoxCalc
 
         private void Square_Click(object sender, EventArgs e) // Возведение в степень
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"X^2 {a}";
-                box1.Clear();
-                temp = 9;
-                znak = true;
-                label2.Text = "x^2";
+            try {
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"X^2 {a}";
+            box1.Clear();
+            temp = 9;
+            znak = true;
+            label2.Text = "x^2";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -298,14 +294,13 @@ namespace FoxCalc
 
         private void Exp_Click(object sender, EventArgs e) // Экспонента
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"Exp {a}";
-                box1.Clear();
-                temp = 10;
-                znak = true;
-                label2.Text = "exp";
+            try {
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"Exp {a}";
+            box1.Clear();
+            temp = 10;
+            znak = true;
+            label2.Text = "exp";
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
             {
@@ -319,22 +314,20 @@ namespace FoxCalc
 
         private void Sqrt_Click(object sender, EventArgs e) // Квадратный корень
         {
-            try
-            {
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"sqrt {a}";
-                box1.Clear();
-                temp = 11;
-                znak = true;
-                label2.Text = "sqrt";
+            try { 
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"sqrt {a}";
+            box1.Clear();
+            temp = 11;
+            znak = true;
+            label2.Text = "sqrt";
                 if (a < 0)  // если число а отрицательное, то выдает ошибку
-                    MessageBox.Show("Корень из отрицательного числа выводить нельзя", "Ошибка");
-
+                MessageBox.Show("Корень из отрицательного числа выводить нельзя", "Ошибка");
             }
             catch (FormatException) // ошибка если в TextBox введена не цифра
-                {
-                    MessageBox.Show("Введено нечисловое значение", "Ошибка");
-                }
+            {
+                MessageBox.Show("Введено нечисловое значение", "Ошибка");
+            }
             finally // "Подсказка"
             {
                 label3.Text = "Нажмите кнопку C, чтобы стереть.";
@@ -343,7 +336,7 @@ namespace FoxCalc
 
         private void StrokeCalc_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public void Calc(int temp) // Кнопка =
@@ -379,7 +372,7 @@ namespace FoxCalc
                     box1.Text = b.ToString();
                     break;
                 case 8:
-                    b = 1 / Math.Tan(a);
+                    b = 1/Math.Tan(a);
                     box1.Text = b.ToString();
                     break;
                 case 9:
