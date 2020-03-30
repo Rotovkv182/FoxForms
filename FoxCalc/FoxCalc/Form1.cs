@@ -120,7 +120,6 @@ namespace FoxCalc
             box1.Clear();
             a = 0;
             b = 0;
-
         }
         private void Sin_Click(object sender, EventArgs e) // Синус
         {
