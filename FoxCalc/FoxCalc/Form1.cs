@@ -72,7 +72,6 @@ namespace FoxCalc
                 temp = 1;
                 znak = true;
                 label2.Text = "+";
-                
         }
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
