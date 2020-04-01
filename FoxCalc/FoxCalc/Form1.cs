@@ -76,7 +76,6 @@ namespace FoxCalc
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
             except(box1.Text);
-            a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}-";
             box1.Clear();
             box1.Focus();
@@ -294,6 +293,25 @@ namespace FoxCalc
                     break;
             }
         }
+
+        private void Cb1_CheckedChanged(object sender, EventArgs e) // длина строки
+        {
+            string l = InputBox.Text.Length.ToString();
+            labelresult.Text = $"Длина строки: {l}";
+        }
+
+        private void Cb2_CheckedChanged(object sender, EventArgs e) // заглавные
+        {
+            string up = InputBox.Text.ToUpper();
+            outputBox.Text = $"{up}";
+        }
+
+        private void Cb3_CheckedChanged(object sender, EventArgs e) // строчные
+        {
+            string low = InputBox.Text.ToLower();
+            outputBox.Text = $"{low}";
+        }
+
         public void except(string box1)
         {
             try

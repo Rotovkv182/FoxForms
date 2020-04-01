@@ -64,15 +64,17 @@
             this.n7 = new System.Windows.Forms.Button();
             this.box1 = new System.Windows.Forms.TextBox();
             this.StrokeCalc = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.taskout = new System.Windows.Forms.TextBox();
-            this.Iniout = new System.Windows.Forms.TextBox();
-            this.Conout = new System.Windows.Forms.TextBox();
+            this.outputBox = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.ConvertCalc = new System.Windows.Forms.TabPage();
+            this.cb1 = new System.Windows.Forms.CheckBox();
+            this.cb2 = new System.Windows.Forms.CheckBox();
+            this.cb3 = new System.Windows.Forms.CheckBox();
+            this.cb4 = new System.Windows.Forms.CheckBox();
+            this.cb5 = new System.Windows.Forms.CheckBox();
+            this.cb6 = new System.Windows.Forms.CheckBox();
+            this.cb7 = new System.Windows.Forms.CheckBox();
+            this.labelresult = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -665,13 +667,16 @@
             // StrokeCalc
             // 
             this.StrokeCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.StrokeCalc.Controls.Add(this.button5);
-            this.StrokeCalc.Controls.Add(this.button3);
-            this.StrokeCalc.Controls.Add(this.button2);
-            this.StrokeCalc.Controls.Add(this.button1);
-            this.StrokeCalc.Controls.Add(this.taskout);
-            this.StrokeCalc.Controls.Add(this.Iniout);
-            this.StrokeCalc.Controls.Add(this.Conout);
+            this.StrokeCalc.BackgroundImage = global::FoxCalc.Properties.Resources.stroke;
+            this.StrokeCalc.Controls.Add(this.labelresult);
+            this.StrokeCalc.Controls.Add(this.cb7);
+            this.StrokeCalc.Controls.Add(this.cb6);
+            this.StrokeCalc.Controls.Add(this.cb5);
+            this.StrokeCalc.Controls.Add(this.cb4);
+            this.StrokeCalc.Controls.Add(this.cb3);
+            this.StrokeCalc.Controls.Add(this.cb2);
+            this.StrokeCalc.Controls.Add(this.cb1);
+            this.StrokeCalc.Controls.Add(this.outputBox);
             this.StrokeCalc.Controls.Add(this.InputBox);
             this.StrokeCalc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StrokeCalc.Location = new System.Drawing.Point(4, 28);
@@ -681,72 +686,27 @@
             this.StrokeCalc.TabIndex = 1;
             this.StrokeCalc.Text = "Строковый";
             // 
-            // button5
+            // outputBox
             // 
-            this.button5.Location = new System.Drawing.Point(117, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 33);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(9, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 33);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(9, 233);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 33);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // taskout
-            // 
-            this.taskout.Location = new System.Drawing.Point(253, 305);
-            this.taskout.Multiline = true;
-            this.taskout.Name = "taskout";
-            this.taskout.Size = new System.Drawing.Size(116, 33);
-            this.taskout.TabIndex = 3;
-            // 
-            // Iniout
-            // 
-            this.Iniout.Location = new System.Drawing.Point(253, 233);
-            this.Iniout.Multiline = true;
-            this.Iniout.Name = "Iniout";
-            this.Iniout.Size = new System.Drawing.Size(116, 33);
-            this.Iniout.TabIndex = 2;
-            // 
-            // Conout
-            // 
-            this.Conout.Location = new System.Drawing.Point(253, 155);
-            this.Conout.Multiline = true;
-            this.Conout.Name = "Conout";
-            this.Conout.Size = new System.Drawing.Size(116, 33);
-            this.Conout.TabIndex = 1;
+            this.outputBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.outputBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.outputBox.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputBox.Location = new System.Drawing.Point(17, 107);
+            this.outputBox.Multiline = true;
+            this.outputBox.Name = "outputBox";
+            this.outputBox.Size = new System.Drawing.Size(419, 42);
+            this.outputBox.TabIndex = 8;
             // 
             // InputBox
             // 
-            this.InputBox.Location = new System.Drawing.Point(58, 13);
+            this.InputBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InputBox.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputBox.Location = new System.Drawing.Point(17, 29);
             this.InputBox.Multiline = true;
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(260, 51);
+            this.InputBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.InputBox.Size = new System.Drawing.Size(419, 42);
             this.InputBox.TabIndex = 0;
             // 
             // ConvertCalc
@@ -757,6 +717,104 @@
             this.ConvertCalc.TabIndex = 2;
             this.ConvertCalc.Text = "Конверторы";
             this.ConvertCalc.UseVisualStyleBackColor = true;
+            // 
+            // cb1
+            // 
+            this.cb1.AutoSize = true;
+            this.cb1.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb1.Location = new System.Drawing.Point(17, 219);
+            this.cb1.Name = "cb1";
+            this.cb1.Size = new System.Drawing.Size(168, 22);
+            this.cb1.TabIndex = 9;
+            this.cb1.Text = "Определить длину";
+            this.cb1.UseVisualStyleBackColor = true;
+            this.cb1.CheckedChanged += new System.EventHandler(this.Cb1_CheckedChanged);
+            // 
+            // cb2
+            // 
+            this.cb2.AutoSize = true;
+            this.cb2.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb2.Location = new System.Drawing.Point(17, 247);
+            this.cb2.Name = "cb2";
+            this.cb2.Size = new System.Drawing.Size(225, 22);
+            this.cb2.TabIndex = 10;
+            this.cb2.Text = "Преоб. буквы в заглавные";
+            this.cb2.UseVisualStyleBackColor = true;
+            this.cb2.CheckedChanged += new System.EventHandler(this.Cb2_CheckedChanged);
+            // 
+            // cb3
+            // 
+            this.cb3.AutoSize = true;
+            this.cb3.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb3.Location = new System.Drawing.Point(17, 275);
+            this.cb3.Name = "cb3";
+            this.cb3.Size = new System.Drawing.Size(227, 22);
+            this.cb3.TabIndex = 11;
+            this.cb3.Text = "Преобр. буквы в строчные";
+            this.cb3.UseVisualStyleBackColor = true;
+            this.cb3.CheckedChanged += new System.EventHandler(this.Cb3_CheckedChanged);
+            // 
+            // cb4
+            // 
+            this.cb4.AutoSize = true;
+            this.cb4.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb4.Location = new System.Drawing.Point(17, 303);
+            this.cb4.Name = "cb4";
+            this.cb4.Size = new System.Drawing.Size(111, 22);
+            this.cb4.TabIndex = 12;
+            this.cb4.Text = "Статистика";
+            this.cb4.UseVisualStyleBackColor = true;
+            // 
+            // cb5
+            // 
+            this.cb5.AutoSize = true;
+            this.cb5.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb5.Location = new System.Drawing.Point(17, 331);
+            this.cb5.Name = "cb5";
+            this.cb5.Size = new System.Drawing.Size(271, 22);
+            this.cb5.TabIndex = 13;
+            this.cb5.Text = "Выделение из строки подстроки";
+            this.cb5.UseVisualStyleBackColor = true;
+            // 
+            // cb6
+            // 
+            this.cb6.AutoSize = true;
+            this.cb6.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb6.Location = new System.Drawing.Point(17, 359);
+            this.cb6.Name = "cb6";
+            this.cb6.Size = new System.Drawing.Size(143, 22);
+            this.cb6.TabIndex = 14;
+            this.cb6.Text = "Преобр. строки";
+            this.cb6.UseVisualStyleBackColor = true;
+            // 
+            // cb7
+            // 
+            this.cb7.AutoSize = true;
+            this.cb7.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.cb7.Location = new System.Drawing.Point(17, 387);
+            this.cb7.Name = "cb7";
+            this.cb7.Size = new System.Drawing.Size(259, 22);
+            this.cb7.TabIndex = 15;
+            this.cb7.Text = "Исправление ошибок в строке";
+            this.cb7.UseVisualStyleBackColor = true;
+            // 
+            // labelresult
+            // 
+            this.labelresult.AutoSize = true;
+            this.labelresult.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelresult.ForeColor = System.Drawing.Color.White;
+            this.labelresult.Location = new System.Drawing.Point(145, 168);
+            this.labelresult.Name = "labelresult";
+            this.labelresult.Size = new System.Drawing.Size(0, 25);
+            this.labelresult.TabIndex = 16;
+            this.labelresult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -812,19 +870,21 @@
         private System.Windows.Forms.Button n8;
         private System.Windows.Forms.Button n7;
         private System.Windows.Forms.TextBox box1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox taskout;
-        private System.Windows.Forms.TextBox Iniout;
-        private System.Windows.Forms.TextBox Conout;
         private System.Windows.Forms.TextBox InputBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton bin;
         private System.Windows.Forms.RadioButton hex;
         private System.Windows.Forms.RadioButton oct;
         private System.Windows.Forms.RadioButton dec;
+        private System.Windows.Forms.TextBox outputBox;
+        private System.Windows.Forms.CheckBox cb7;
+        private System.Windows.Forms.CheckBox cb6;
+        private System.Windows.Forms.CheckBox cb5;
+        private System.Windows.Forms.CheckBox cb4;
+        private System.Windows.Forms.CheckBox cb3;
+        private System.Windows.Forms.CheckBox cb2;
+        private System.Windows.Forms.CheckBox cb1;
+        private System.Windows.Forms.Label labelresult;
     }
 }
 
