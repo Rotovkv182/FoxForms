@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace FoxCalc
@@ -64,7 +65,7 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-           except(box1.Text);
+           Except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"{a}+";
                 box1.Clear();
@@ -75,7 +76,7 @@ namespace FoxCalc
         }
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
-            except(box1.Text);
+            Except(box1.Text);
             label1.Text = $"{a}-";
             box1.Clear();
             box1.Focus();
@@ -85,7 +86,7 @@ namespace FoxCalc
         }
         private void Multiply_Click(object sender, EventArgs e) // Умножение
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"{a}*";
             box1.Clear();
@@ -96,7 +97,7 @@ namespace FoxCalc
         }
         private void Segment_Click(object sender, EventArgs e) // Деление
         {
-                except(box1.Text);
+                Except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"{a}/";
                 box1.Clear();
@@ -107,7 +108,7 @@ namespace FoxCalc
         }
         private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
-                except(box1.Text);
+                Except(box1.Text);
                  Calc(temp);
                 box1.Text = Convert.ToString(b);
         }
@@ -122,7 +123,7 @@ namespace FoxCalc
         }
         private void Sin_Click(object sender, EventArgs e) // Синус
         {
-                except(box1.Text);
+                Except(box1.Text);
                 a = Convert.ToInt32(box1.Text);
                 label1.Text = $"Sin {a}";
                 box1.Clear();
@@ -132,7 +133,7 @@ namespace FoxCalc
         }
         private void Cos_Click(object sender, EventArgs e) // Косинус
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Cos {a}";
             box1.Clear();
@@ -143,7 +144,7 @@ namespace FoxCalc
 
         private void Tang_Click(object sender, EventArgs e) // Тангенс
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Tg {a}";
             box1.Clear();
@@ -154,7 +155,7 @@ namespace FoxCalc
 
         private void Ctg_Click(object sender, EventArgs e) // Котангенс
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Сtg {a}";
             box1.Clear();
@@ -179,7 +180,7 @@ namespace FoxCalc
 
         private void Square_Click(object sender, EventArgs e) // Возведение в степень
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"X^2 {a}";
             box1.Clear();
@@ -189,7 +190,7 @@ namespace FoxCalc
         }
         private void Exp_Click(object sender, EventArgs e) // Экспонента
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"Exp {a}";
             box1.Clear();
@@ -200,7 +201,7 @@ namespace FoxCalc
 
         private void Sqrt_Click(object sender, EventArgs e) // Квадратный корень
         {
-            except(box1.Text);
+            Except(box1.Text);
             a = Convert.ToInt32(box1.Text);
             label1.Text = $"sqrt {a}";
             box1.Clear();
@@ -294,25 +295,66 @@ namespace FoxCalc
             }
         }
 
-        private void Cb1_CheckedChanged(object sender, EventArgs e) // длина строки
+        private void Stats_CheckedChanged(object sender, EventArgs e)
         {
-            string l = InputBox.Text.Length.ToString();
-            labelresult.Text = $"Длина строки: {l}";
+            int count = 0;
+            //Подсчет цифр
+            foreach (char ch in InputBox.Text)
+            {
+                if (Char.IsDigit(ch))
+                    count++;
+            }
+            //Подсчет гласных и согласных
+            string gl = "уеыаоэяиёюУЕЫАОЭЯИЁЮaeiouAEIOU";
+            string sogl = "цкнгшщзхфвпрлджчсмтбЦКНГШЩЗХФВПРЛДЖЧСМТБbcdfghjklmnpqrstvwxyzBCDFGHJKLMNQRSTVWXYZ";
+            int i = 0, j = 0;
+            //Общее кол-во
+            InputBox.Text.ToCharArray().All(z => 
+            {
+                if (gl.ToCharArray().Contains(z)) i++;
+                else if
+            (sogl.ToCharArray().Contains(z)) j++; return true;});
+            //Вывод
+            labelresult.Text = $"Сколько строк: { ((string[])InputBox.Lines).Length.ToString()} \n" +
+                $"Сколько слов: { InputBox.Text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length } \n" +
+                $"Сколько цифр: {count} \n" +
+                $"Гласных: {i} \n" +
+                $"Согласных: {j}";
         }
 
-        private void Cb2_CheckedChanged(object sender, EventArgs e) // заглавные
-        {
-            string up = InputBox.Text.ToUpper();
-            outputBox.Text = $"{up}";
-        }
-
-        private void Cb3_CheckedChanged(object sender, EventArgs e) // строчные
+        private void Lower_CheckedChanged(object sender, EventArgs e)
         {
             string low = InputBox.Text.ToLower();
             outputBox.Text = $"{low}";
         }
 
-        public void except(string box1)
+        private void Upper_CheckedChanged(object sender, EventArgs e)
+        {
+            string up = InputBox.Text.ToUpper();
+            outputBox.Text = $"{up}";
+        }
+
+        private void Strokelength_CheckedChanged(object sender, EventArgs e)
+        {
+            string l = InputBox.Text.Length.ToString();
+            labelresult.Text = $"Длина строки: {l}";
+            }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            InputBox.Text = "";
+            outputBox.Text = "";
+            labelresult.Text = "";
+            strokelength.Checked = false;
+            upper.Checked = false;
+            lower.Checked = false;
+            stats.Checked = false;
+            cb5.Checked = false;
+            cb6.Checked = false;
+            cb7.Checked = false;
+        }
+
+        public void Except(string box1)
         {
             try
             {
@@ -322,6 +364,10 @@ namespace FoxCalc
             catch (FormatException)
             {
                 MessageBox.Show("Введено нечисловое значение!", "Ошибка");// исключение на ввод букв
+            }
+            finally
+            {
+                label3.Text = "Нажмите С, чтобы стереть.";
             }
         }
     }

@@ -64,17 +64,18 @@
             this.n7 = new System.Windows.Forms.Button();
             this.box1 = new System.Windows.Forms.TextBox();
             this.StrokeCalc = new System.Windows.Forms.TabPage();
+            this.labelresult = new System.Windows.Forms.Label();
+            this.cb7 = new System.Windows.Forms.CheckBox();
+            this.cb6 = new System.Windows.Forms.CheckBox();
+            this.cb5 = new System.Windows.Forms.CheckBox();
+            this.stats = new System.Windows.Forms.CheckBox();
+            this.lower = new System.Windows.Forms.CheckBox();
+            this.upper = new System.Windows.Forms.CheckBox();
+            this.strokelength = new System.Windows.Forms.CheckBox();
             this.outputBox = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.ConvertCalc = new System.Windows.Forms.TabPage();
-            this.cb1 = new System.Windows.Forms.CheckBox();
-            this.cb2 = new System.Windows.Forms.CheckBox();
-            this.cb3 = new System.Windows.Forms.CheckBox();
-            this.cb4 = new System.Windows.Forms.CheckBox();
-            this.cb5 = new System.Windows.Forms.CheckBox();
-            this.cb6 = new System.Windows.Forms.CheckBox();
-            this.cb7 = new System.Windows.Forms.CheckBox();
-            this.labelresult = new System.Windows.Forms.Label();
+            this.reset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -668,16 +669,18 @@
             // 
             this.StrokeCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.StrokeCalc.BackgroundImage = global::FoxCalc.Properties.Resources.stroke;
+            this.StrokeCalc.Controls.Add(this.reset);
             this.StrokeCalc.Controls.Add(this.labelresult);
             this.StrokeCalc.Controls.Add(this.cb7);
             this.StrokeCalc.Controls.Add(this.cb6);
             this.StrokeCalc.Controls.Add(this.cb5);
-            this.StrokeCalc.Controls.Add(this.cb4);
-            this.StrokeCalc.Controls.Add(this.cb3);
-            this.StrokeCalc.Controls.Add(this.cb2);
-            this.StrokeCalc.Controls.Add(this.cb1);
+            this.StrokeCalc.Controls.Add(this.stats);
+            this.StrokeCalc.Controls.Add(this.lower);
+            this.StrokeCalc.Controls.Add(this.upper);
+            this.StrokeCalc.Controls.Add(this.strokelength);
             this.StrokeCalc.Controls.Add(this.outputBox);
             this.StrokeCalc.Controls.Add(this.InputBox);
+            this.StrokeCalc.Font = new System.Drawing.Font("Solomon Sans Normal", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StrokeCalc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StrokeCalc.Location = new System.Drawing.Point(4, 28);
             this.StrokeCalc.Name = "StrokeCalc";
@@ -685,6 +688,105 @@
             this.StrokeCalc.Size = new System.Drawing.Size(454, 438);
             this.StrokeCalc.TabIndex = 1;
             this.StrokeCalc.Text = "Строковый";
+            // 
+            // labelresult
+            // 
+            this.labelresult.AutoSize = true;
+            this.labelresult.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelresult.ForeColor = System.Drawing.Color.White;
+            this.labelresult.Location = new System.Drawing.Point(145, 168);
+            this.labelresult.Name = "labelresult";
+            this.labelresult.Size = new System.Drawing.Size(0, 25);
+            this.labelresult.TabIndex = 16;
+            this.labelresult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cb7
+            // 
+            this.cb7.AutoSize = true;
+            this.cb7.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb7.ForeColor = System.Drawing.Color.Lime;
+            this.cb7.Location = new System.Drawing.Point(17, 387);
+            this.cb7.Name = "cb7";
+            this.cb7.Size = new System.Drawing.Size(259, 22);
+            this.cb7.TabIndex = 15;
+            this.cb7.Text = "Исправление ошибок в строке";
+            this.cb7.UseVisualStyleBackColor = true;
+            // 
+            // cb6
+            // 
+            this.cb6.AutoSize = true;
+            this.cb6.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb6.ForeColor = System.Drawing.Color.Lime;
+            this.cb6.Location = new System.Drawing.Point(17, 359);
+            this.cb6.Name = "cb6";
+            this.cb6.Size = new System.Drawing.Size(143, 22);
+            this.cb6.TabIndex = 14;
+            this.cb6.Text = "Преобр. строки";
+            this.cb6.UseVisualStyleBackColor = true;
+            // 
+            // cb5
+            // 
+            this.cb5.AutoSize = true;
+            this.cb5.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb5.ForeColor = System.Drawing.Color.Lime;
+            this.cb5.Location = new System.Drawing.Point(17, 331);
+            this.cb5.Name = "cb5";
+            this.cb5.Size = new System.Drawing.Size(271, 22);
+            this.cb5.TabIndex = 13;
+            this.cb5.Text = "Выделение из строки подстроки";
+            this.cb5.UseVisualStyleBackColor = true;
+            // 
+            // stats
+            // 
+            this.stats.AutoSize = true;
+            this.stats.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stats.ForeColor = System.Drawing.Color.Lime;
+            this.stats.Location = new System.Drawing.Point(17, 303);
+            this.stats.Name = "stats";
+            this.stats.Size = new System.Drawing.Size(111, 22);
+            this.stats.TabIndex = 12;
+            this.stats.Text = "Статистика";
+            this.stats.UseVisualStyleBackColor = true;
+            this.stats.CheckedChanged += new System.EventHandler(this.Stats_CheckedChanged);
+            // 
+            // lower
+            // 
+            this.lower.AutoSize = true;
+            this.lower.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lower.ForeColor = System.Drawing.Color.Lime;
+            this.lower.Location = new System.Drawing.Point(17, 275);
+            this.lower.Name = "lower";
+            this.lower.Size = new System.Drawing.Size(227, 22);
+            this.lower.TabIndex = 11;
+            this.lower.Text = "Преобр. буквы в строчные";
+            this.lower.UseVisualStyleBackColor = true;
+            this.lower.CheckedChanged += new System.EventHandler(this.Lower_CheckedChanged);
+            // 
+            // upper
+            // 
+            this.upper.AutoSize = true;
+            this.upper.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upper.ForeColor = System.Drawing.Color.Lime;
+            this.upper.Location = new System.Drawing.Point(17, 247);
+            this.upper.Name = "upper";
+            this.upper.Size = new System.Drawing.Size(225, 22);
+            this.upper.TabIndex = 10;
+            this.upper.Text = "Преоб. буквы в заглавные";
+            this.upper.UseVisualStyleBackColor = true;
+            this.upper.CheckedChanged += new System.EventHandler(this.Upper_CheckedChanged);
+            // 
+            // strokelength
+            // 
+            this.strokelength.AutoSize = true;
+            this.strokelength.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.strokelength.ForeColor = System.Drawing.Color.Lime;
+            this.strokelength.Location = new System.Drawing.Point(17, 219);
+            this.strokelength.Name = "strokelength";
+            this.strokelength.Size = new System.Drawing.Size(168, 22);
+            this.strokelength.TabIndex = 9;
+            this.strokelength.Text = "Определить длину";
+            this.strokelength.UseVisualStyleBackColor = true;
+            this.strokelength.CheckedChanged += new System.EventHandler(this.Strokelength_CheckedChanged);
             // 
             // outputBox
             // 
@@ -718,103 +820,22 @@
             this.ConvertCalc.Text = "Конверторы";
             this.ConvertCalc.UseVisualStyleBackColor = true;
             // 
-            // cb1
+            // reset
             // 
-            this.cb1.AutoSize = true;
-            this.cb1.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb1.Location = new System.Drawing.Point(17, 219);
-            this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(168, 22);
-            this.cb1.TabIndex = 9;
-            this.cb1.Text = "Определить длину";
-            this.cb1.UseVisualStyleBackColor = true;
-            this.cb1.CheckedChanged += new System.EventHandler(this.Cb1_CheckedChanged);
-            // 
-            // cb2
-            // 
-            this.cb2.AutoSize = true;
-            this.cb2.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb2.Location = new System.Drawing.Point(17, 247);
-            this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(225, 22);
-            this.cb2.TabIndex = 10;
-            this.cb2.Text = "Преоб. буквы в заглавные";
-            this.cb2.UseVisualStyleBackColor = true;
-            this.cb2.CheckedChanged += new System.EventHandler(this.Cb2_CheckedChanged);
-            // 
-            // cb3
-            // 
-            this.cb3.AutoSize = true;
-            this.cb3.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb3.Location = new System.Drawing.Point(17, 275);
-            this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(227, 22);
-            this.cb3.TabIndex = 11;
-            this.cb3.Text = "Преобр. буквы в строчные";
-            this.cb3.UseVisualStyleBackColor = true;
-            this.cb3.CheckedChanged += new System.EventHandler(this.Cb3_CheckedChanged);
-            // 
-            // cb4
-            // 
-            this.cb4.AutoSize = true;
-            this.cb4.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb4.Location = new System.Drawing.Point(17, 303);
-            this.cb4.Name = "cb4";
-            this.cb4.Size = new System.Drawing.Size(111, 22);
-            this.cb4.TabIndex = 12;
-            this.cb4.Text = "Статистика";
-            this.cb4.UseVisualStyleBackColor = true;
-            // 
-            // cb5
-            // 
-            this.cb5.AutoSize = true;
-            this.cb5.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb5.Location = new System.Drawing.Point(17, 331);
-            this.cb5.Name = "cb5";
-            this.cb5.Size = new System.Drawing.Size(271, 22);
-            this.cb5.TabIndex = 13;
-            this.cb5.Text = "Выделение из строки подстроки";
-            this.cb5.UseVisualStyleBackColor = true;
-            // 
-            // cb6
-            // 
-            this.cb6.AutoSize = true;
-            this.cb6.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb6.Location = new System.Drawing.Point(17, 359);
-            this.cb6.Name = "cb6";
-            this.cb6.Size = new System.Drawing.Size(143, 22);
-            this.cb6.TabIndex = 14;
-            this.cb6.Text = "Преобр. строки";
-            this.cb6.UseVisualStyleBackColor = true;
-            // 
-            // cb7
-            // 
-            this.cb7.AutoSize = true;
-            this.cb7.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.cb7.Location = new System.Drawing.Point(17, 387);
-            this.cb7.Name = "cb7";
-            this.cb7.Size = new System.Drawing.Size(259, 22);
-            this.cb7.TabIndex = 15;
-            this.cb7.Text = "Исправление ошибок в строке";
-            this.cb7.UseVisualStyleBackColor = true;
-            // 
-            // labelresult
-            // 
-            this.labelresult.AutoSize = true;
-            this.labelresult.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelresult.ForeColor = System.Drawing.Color.White;
-            this.labelresult.Location = new System.Drawing.Point(145, 168);
-            this.labelresult.Name = "labelresult";
-            this.labelresult.Size = new System.Drawing.Size(0, 25);
-            this.labelresult.TabIndex = 16;
-            this.labelresult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reset.BackColor = System.Drawing.Color.Transparent;
+            this.reset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Solomon Sans Normal", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.reset.Location = new System.Drawing.Point(404, 374);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(27, 44);
+            this.reset.TabIndex = 46;
+            this.reset.TabStop = false;
+            this.reset.Text = "C";
+            this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // Form1
             // 
@@ -880,11 +901,12 @@
         private System.Windows.Forms.CheckBox cb7;
         private System.Windows.Forms.CheckBox cb6;
         private System.Windows.Forms.CheckBox cb5;
-        private System.Windows.Forms.CheckBox cb4;
-        private System.Windows.Forms.CheckBox cb3;
-        private System.Windows.Forms.CheckBox cb2;
-        private System.Windows.Forms.CheckBox cb1;
+        private System.Windows.Forms.CheckBox stats;
+        private System.Windows.Forms.CheckBox lower;
+        private System.Windows.Forms.CheckBox upper;
+        private System.Windows.Forms.CheckBox strokelength;
         private System.Windows.Forms.Label labelresult;
+        private System.Windows.Forms.Button reset;
     }
 }
 
