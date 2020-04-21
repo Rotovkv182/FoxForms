@@ -65,14 +65,14 @@ namespace FoxCalc
         }
         private void Plus_Click(object sender, EventArgs e) // Сложение
         {
-           Except(box1.Text);
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}+";
-                box1.Clear();
-                box1.Focus();
-                temp = 1;
-                znak = true;
-                label2.Text = "+";
+            Except(box1.Text);
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"{a}+";
+            box1.Clear();
+            box1.Focus();
+            temp = 1;
+            znak = true;
+            label2.Text = "+";
         }
         private void Minus_Click(object sender, EventArgs e) // Вычитание
         {
@@ -97,20 +97,20 @@ namespace FoxCalc
         }
         private void Segment_Click(object sender, EventArgs e) // Деление
         {
-                Except(box1.Text);
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"{a}/";
-                box1.Clear();
-                box1.Focus();
-                temp = 4;
-                znak = true;
-                label2.Text = "/";
+            Except(box1.Text);
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"{a}/";
+            box1.Clear();
+            box1.Focus();
+            temp = 4;
+            znak = true;
+            label2.Text = "/";
         }
         private void Equal_Click(object sender, EventArgs e) // Кнопка равно
         {
-                Except(box1.Text);
-                 Calc(temp);
-                box1.Text = Convert.ToString(b);
+            Except(box1.Text);
+            Calc(temp);
+            box1.Text = Convert.ToString(b);
         }
         private void Clear_Click(object sender, EventArgs e) // Кнопка очистки
         {
@@ -123,13 +123,13 @@ namespace FoxCalc
         }
         private void Sin_Click(object sender, EventArgs e) // Синус
         {
-                Except(box1.Text);
-                a = Convert.ToInt32(box1.Text);
-                label1.Text = $"Sin {a}";
-                box1.Clear();
-                temp = 5;
-                znak = true;
-                label2.Text = "Sin";
+            Except(box1.Text);
+            a = Convert.ToInt32(box1.Text);
+            label1.Text = $"Sin {a}";
+            box1.Clear();
+            temp = 5;
+            znak = true;
+            label2.Text = "Sin";
         }
         private void Cos_Click(object sender, EventArgs e) // Косинус
         {
@@ -208,7 +208,7 @@ namespace FoxCalc
             temp = 11;
             znak = true;
             label2.Text = "sqrt";
-                if (a < 0)  // если число а отрицательное, то выдает ошибку
+            if (a < 0)  // если число а отрицательное, то выдает ошибку
                 MessageBox.Show("Корень из отрицательного числа выводить нельзя", "Ошибка");
         }
         private void Oct_CheckedChanged(object sender, EventArgs e) // перевод в восьмиричную сс
@@ -275,7 +275,7 @@ namespace FoxCalc
                     box1.Text = b.ToString();
                     break;
                 case 8:
-                    b = 1/Math.Tan(a);
+                    b = 1 / Math.Tan(a);
                     box1.Text = b.ToString();
                     break;
                 case 9:
@@ -309,11 +309,11 @@ namespace FoxCalc
             string sogl = "цкнгшщзхфвпрлджчсмтбЦКНГШЩЗХФВПРЛДЖЧСМТБbcdfghjklmnpqrstvwxyzBCDFGHJKLMNQRSTVWXYZ";
             int i = 0, j = 0;
             //Общее кол-во
-            InputBox.Text.ToCharArray().All(z => 
+            InputBox.Text.ToCharArray().All(z =>
             {
                 if (gl.ToCharArray().Contains(z)) i++;
                 else if
-            (sogl.ToCharArray().Contains(z)) j++; return true;});
+            (sogl.ToCharArray().Contains(z)) j++; return true; });
             //Вывод
             labelresult.Text = $"Сколько строк: { ((string[])InputBox.Lines).Length.ToString()} \n" +
                 $"Сколько слов: { InputBox.Text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length } \n" +
@@ -338,7 +338,7 @@ namespace FoxCalc
         {
             string l = InputBox.Text.Length.ToString();
             labelresult.Text = $"Длина строки: {l}";
-            }
+        }
 
         private void Reset_Click(object sender, EventArgs e)
         {
@@ -354,20 +354,77 @@ namespace FoxCalc
             cb7.Checked = false;
         }
 
+        private void Cb7_CheckedChanged(object sender, EventArgs e)
+        {
+            // нахождение ошибок в строке
+            string text = InputBox.Text;
+            string[] trues = new string[] { "жи", "ши", "ча", "ща", "чу", "щу" };
+            string[] errors = new string[] { "жы", "шы", "чя", "щя", "чю", "щю" };
+            for (int i = 0; i < InputBox.Text.Length; i++)// перебираем введенные данные
+            {
+                for (int j = 0; j < errors.Length; j++) // перебираем ошибки
+                {
+                    if (InputBox.Text.Contains(errors[j])) // проверка на наличие ошибок
+                        text = InputBox.Text.Replace(errors[j], trues[j]); // если они есть, заменяем их
+                    outputBox.Text = text;
+                }
+            }
+        }
+
+        private void ConvEqual_Click(object sender, EventArgs e)
+        {
+            Except(box1.Text);
+            // задаем расход и цены за л бензина
+            if (VehiclesBox.SelectedIndex == 0)
+                intakeLabel.Text = 8.ToString();
+            if (VehiclesBox.SelectedIndex == 1)
+                intakeLabel.Text = 4.ToString();
+            if (VehiclesBox.SelectedIndex == 2)
+                intakeLabel.Text = 33.ToString();
+            if (FuelBox.SelectedIndex == 0)
+                PriceLabel.Text = 20.50.ToString();
+            if (FuelBox.SelectedIndex == 1)
+                PriceLabel.Text = 45.95.ToString();
+            if (FuelBox.SelectedIndex == 2)
+                PriceLabel.Text = 41.30.ToString();
+            if (FuelBox.SelectedIndex == 3)
+                PriceLabel.Text = 47.33.ToString();
+            if (FuelBox.SelectedIndex == 4)
+                PriceLabel.Text = 52.02.ToString();
+            // переменные
+                double distance = Convert.ToDouble(inputDistance.Text);
+                double fuel = Convert.ToDouble(PriceLabel.Text);
+                double intake = Convert.ToDouble(intakeLabel.Text);
+                // расчет цены за поездку
+                OutputPrice.Text = Math.Round((distance / 100 * intake) * fuel).ToString();
+        }
+        private void ClearButConv_Click(object sender, EventArgs e)
+        {
+            inputDistance.Clear();
+            OutputPrice.Clear();
+            PriceLabel.Text = "";
+            intakeLabel.Text = "";
+            FuelBox.SelectedItem = default;
+            VehiclesBox.SelectedItem = default;
+        }
+
+        private void Cb5_CheckedChanged(object sender, EventArgs e)
+        {
+            string text = InputBox.Text;
+            text = InputBox.Text.Substring(5); // извлечение подстроки
+            outputBox.Text = text;
+        }
+
         public void Except(string box1)
         {
             try
             {
-                int i = Convert.ToInt32(box1);
+                double i = Convert.ToDouble(box1);
                 box1 = Convert.ToString(i);
             }
             catch (FormatException)
             {
                 MessageBox.Show("Введено нечисловое значение!", "Ошибка");// исключение на ввод букв
-            }
-            finally
-            {
-                label3.Text = "Нажмите С, чтобы стереть.";
             }
         }
     }

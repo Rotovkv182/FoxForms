@@ -64,6 +64,7 @@
             this.n7 = new System.Windows.Forms.Button();
             this.box1 = new System.Windows.Forms.TextBox();
             this.StrokeCalc = new System.Windows.Forms.TabPage();
+            this.reset = new System.Windows.Forms.Button();
             this.labelresult = new System.Windows.Forms.Label();
             this.cb7 = new System.Windows.Forms.CheckBox();
             this.cb6 = new System.Windows.Forms.CheckBox();
@@ -75,10 +76,24 @@
             this.outputBox = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.ConvertCalc = new System.Windows.Forms.TabPage();
-            this.reset = new System.Windows.Forms.Button();
+            this.ConvEqual = new System.Windows.Forms.Button();
+            this.OutputPrice = new System.Windows.Forms.TextBox();
+            this.FINPriceFuel = new System.Windows.Forms.Label();
+            this.intakeLabel = new System.Windows.Forms.Label();
+            this.UselessIntakeLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
+            this.UselessPriceFuel = new System.Windows.Forms.Label();
+            this.ULVehlabel = new System.Windows.Forms.Label();
+            this.ULFuelLabel = new System.Windows.Forms.Label();
+            this.VehiclesBox = new System.Windows.Forms.ListBox();
+            this.FuelBox = new System.Windows.Forms.ListBox();
+            this.DistanceLabel = new System.Windows.Forms.Label();
+            this.ClearButConv = new System.Windows.Forms.Button();
+            this.inputDistance = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
+            this.ConvertCalc.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,7 +102,7 @@
             this.tabControl1.Controls.Add(this.MainCalc);
             this.tabControl1.Controls.Add(this.StrokeCalc);
             this.tabControl1.Controls.Add(this.ConvertCalc);
-            this.tabControl1.Font = new System.Drawing.Font("Code Pro Bold", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -131,10 +146,10 @@
             this.MainCalc.Controls.Add(this.n8);
             this.MainCalc.Controls.Add(this.n7);
             this.MainCalc.Controls.Add(this.box1);
-            this.MainCalc.Location = new System.Drawing.Point(4, 28);
+            this.MainCalc.Location = new System.Drawing.Point(4, 30);
             this.MainCalc.Name = "MainCalc";
             this.MainCalc.Padding = new System.Windows.Forms.Padding(3);
-            this.MainCalc.Size = new System.Drawing.Size(454, 438);
+            this.MainCalc.Size = new System.Drawing.Size(454, 436);
             this.MainCalc.TabIndex = 0;
             this.MainCalc.Text = "Основной";
             // 
@@ -682,12 +697,29 @@
             this.StrokeCalc.Controls.Add(this.InputBox);
             this.StrokeCalc.Font = new System.Drawing.Font("Solomon Sans Normal", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StrokeCalc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StrokeCalc.Location = new System.Drawing.Point(4, 28);
+            this.StrokeCalc.Location = new System.Drawing.Point(4, 30);
             this.StrokeCalc.Name = "StrokeCalc";
             this.StrokeCalc.Padding = new System.Windows.Forms.Padding(3);
-            this.StrokeCalc.Size = new System.Drawing.Size(454, 438);
+            this.StrokeCalc.Size = new System.Drawing.Size(454, 436);
             this.StrokeCalc.TabIndex = 1;
             this.StrokeCalc.Text = "Строковый";
+            // 
+            // reset
+            // 
+            this.reset.BackColor = System.Drawing.Color.Transparent;
+            this.reset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Solomon Sans Normal", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.reset.Location = new System.Drawing.Point(404, 374);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(27, 44);
+            this.reset.TabIndex = 46;
+            this.reset.TabStop = false;
+            this.reset.Text = "C";
+            this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // labelresult
             // 
@@ -711,6 +743,7 @@
             this.cb7.TabIndex = 15;
             this.cb7.Text = "Исправление ошибок в строке";
             this.cb7.UseVisualStyleBackColor = true;
+            this.cb7.CheckedChanged += new System.EventHandler(this.Cb7_CheckedChanged);
             // 
             // cb6
             // 
@@ -735,6 +768,7 @@
             this.cb5.TabIndex = 13;
             this.cb5.Text = "Выделение из строки подстроки";
             this.cb5.UseVisualStyleBackColor = true;
+            this.cb5.CheckedChanged += new System.EventHandler(this.Cb5_CheckedChanged);
             // 
             // stats
             // 
@@ -813,29 +847,225 @@
             // 
             // ConvertCalc
             // 
-            this.ConvertCalc.Location = new System.Drawing.Point(4, 28);
+            this.ConvertCalc.BackgroundImage = global::FoxCalc.Properties.Resources.convert;
+            this.ConvertCalc.Controls.Add(this.ConvEqual);
+            this.ConvertCalc.Controls.Add(this.OutputPrice);
+            this.ConvertCalc.Controls.Add(this.FINPriceFuel);
+            this.ConvertCalc.Controls.Add(this.intakeLabel);
+            this.ConvertCalc.Controls.Add(this.UselessIntakeLabel);
+            this.ConvertCalc.Controls.Add(this.PriceLabel);
+            this.ConvertCalc.Controls.Add(this.UselessPriceFuel);
+            this.ConvertCalc.Controls.Add(this.ULVehlabel);
+            this.ConvertCalc.Controls.Add(this.ULFuelLabel);
+            this.ConvertCalc.Controls.Add(this.VehiclesBox);
+            this.ConvertCalc.Controls.Add(this.FuelBox);
+            this.ConvertCalc.Controls.Add(this.DistanceLabel);
+            this.ConvertCalc.Controls.Add(this.ClearButConv);
+            this.ConvertCalc.Controls.Add(this.inputDistance);
+            this.ConvertCalc.Location = new System.Drawing.Point(4, 30);
             this.ConvertCalc.Name = "ConvertCalc";
-            this.ConvertCalc.Size = new System.Drawing.Size(454, 438);
+            this.ConvertCalc.Size = new System.Drawing.Size(454, 436);
             this.ConvertCalc.TabIndex = 2;
             this.ConvertCalc.Text = "Конверторы";
             this.ConvertCalc.UseVisualStyleBackColor = true;
             // 
-            // reset
+            // ConvEqual
             // 
-            this.reset.BackColor = System.Drawing.Color.Transparent;
-            this.reset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.reset.FlatAppearance.BorderSize = 0;
-            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reset.Font = new System.Drawing.Font("Solomon Sans Normal", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.reset.Location = new System.Drawing.Point(404, 374);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(27, 44);
-            this.reset.TabIndex = 46;
-            this.reset.TabStop = false;
-            this.reset.Text = "C";
-            this.reset.UseVisualStyleBackColor = false;
-            this.reset.Click += new System.EventHandler(this.Reset_Click);
+            this.ConvEqual.BackColor = System.Drawing.Color.Transparent;
+            this.ConvEqual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ConvEqual.FlatAppearance.BorderSize = 0;
+            this.ConvEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConvEqual.Font = new System.Drawing.Font("Solomon Sans Normal", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConvEqual.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ConvEqual.Location = new System.Drawing.Point(132, 373);
+            this.ConvEqual.Name = "ConvEqual";
+            this.ConvEqual.Size = new System.Drawing.Size(195, 41);
+            this.ConvEqual.TabIndex = 59;
+            this.ConvEqual.TabStop = false;
+            this.ConvEqual.Text = "Рассчитать";
+            this.ConvEqual.UseVisualStyleBackColor = false;
+            this.ConvEqual.Click += new System.EventHandler(this.ConvEqual_Click);
+            // 
+            // OutputPrice
+            // 
+            this.OutputPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.OutputPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutputPrice.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputPrice.ForeColor = System.Drawing.Color.Transparent;
+            this.OutputPrice.Location = new System.Drawing.Point(30, 316);
+            this.OutputPrice.Multiline = true;
+            this.OutputPrice.Name = "OutputPrice";
+            this.OutputPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OutputPrice.Size = new System.Drawing.Size(328, 42);
+            this.OutputPrice.TabIndex = 58;
+            // 
+            // FINPriceFuel
+            // 
+            this.FINPriceFuel.AutoSize = true;
+            this.FINPriceFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.FINPriceFuel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FINPriceFuel.ForeColor = System.Drawing.Color.Transparent;
+            this.FINPriceFuel.Location = new System.Drawing.Point(25, 283);
+            this.FINPriceFuel.Name = "FINPriceFuel";
+            this.FINPriceFuel.Size = new System.Drawing.Size(252, 25);
+            this.FINPriceFuel.TabIndex = 57;
+            this.FINPriceFuel.Text = "Цена за поездку(руб.):";
+            this.FINPriceFuel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // intakeLabel
+            // 
+            this.intakeLabel.AutoSize = true;
+            this.intakeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.intakeLabel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.intakeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.intakeLabel.Location = new System.Drawing.Point(190, 236);
+            this.intakeLabel.Name = "intakeLabel";
+            this.intakeLabel.Size = new System.Drawing.Size(0, 25);
+            this.intakeLabel.TabIndex = 56;
+            this.intakeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // UselessIntakeLabel
+            // 
+            this.UselessIntakeLabel.AutoSize = true;
+            this.UselessIntakeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.UselessIntakeLabel.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UselessIntakeLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.UselessIntakeLabel.Location = new System.Drawing.Point(112, 215);
+            this.UselessIntakeLabel.Name = "UselessIntakeLabel";
+            this.UselessIntakeLabel.Size = new System.Drawing.Size(218, 18);
+            this.UselessIntakeLabel.TabIndex = 55;
+            this.UselessIntakeLabel.Text = "Расход бензина (на 100 км):";
+            this.UselessIntakeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.PriceLabel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.PriceLabel.Location = new System.Drawing.Point(190, 134);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(0, 25);
+            this.PriceLabel.TabIndex = 54;
+            this.PriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // UselessPriceFuel
+            // 
+            this.UselessPriceFuel.AutoSize = true;
+            this.UselessPriceFuel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.UselessPriceFuel.Font = new System.Drawing.Font("Solomon Sans Normal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UselessPriceFuel.ForeColor = System.Drawing.Color.Transparent;
+            this.UselessPriceFuel.Location = new System.Drawing.Point(112, 108);
+            this.UselessPriceFuel.Name = "UselessPriceFuel";
+            this.UselessPriceFuel.Size = new System.Drawing.Size(186, 18);
+            this.UselessPriceFuel.TabIndex = 53;
+            this.UselessPriceFuel.Text = "Цена бензина (за литр):";
+            this.UselessPriceFuel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ULVehlabel
+            // 
+            this.ULVehlabel.AutoSize = true;
+            this.ULVehlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.ULVehlabel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ULVehlabel.ForeColor = System.Drawing.Color.Transparent;
+            this.ULVehlabel.Location = new System.Drawing.Point(304, 108);
+            this.ULVehlabel.Name = "ULVehlabel";
+            this.ULVehlabel.Size = new System.Drawing.Size(139, 25);
+            this.ULVehlabel.TabIndex = 52;
+            this.ULVehlabel.Text = "Транспорт   ";
+            this.ULVehlabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ULFuelLabel
+            // 
+            this.ULFuelLabel.AutoSize = true;
+            this.ULFuelLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.ULFuelLabel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ULFuelLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.ULFuelLabel.Location = new System.Drawing.Point(11, 108);
+            this.ULFuelLabel.Name = "ULFuelLabel";
+            this.ULFuelLabel.Size = new System.Drawing.Size(98, 25);
+            this.ULFuelLabel.TabIndex = 51;
+            this.ULFuelLabel.Text = "Топливо";
+            this.ULFuelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // VehiclesBox
+            // 
+            this.VehiclesBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.VehiclesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VehiclesBox.Font = new System.Drawing.Font("Solomon Sans Normal", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VehiclesBox.ForeColor = System.Drawing.Color.Transparent;
+            this.VehiclesBox.FormattingEnabled = true;
+            this.VehiclesBox.ItemHeight = 19;
+            this.VehiclesBox.Items.AddRange(new object[] {
+            "Легковое авто",
+            "Мотоциклы",
+            "Грузовик"});
+            this.VehiclesBox.Location = new System.Drawing.Point(304, 136);
+            this.VehiclesBox.Name = "VehiclesBox";
+            this.VehiclesBox.Size = new System.Drawing.Size(139, 76);
+            this.VehiclesBox.TabIndex = 50;
+            // 
+            // FuelBox
+            // 
+            this.FuelBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.FuelBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FuelBox.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FuelBox.ForeColor = System.Drawing.Color.Transparent;
+            this.FuelBox.FormattingEnabled = true;
+            this.FuelBox.ItemHeight = 25;
+            this.FuelBox.Items.AddRange(new object[] {
+            "ГАЗ",
+            "ДТ",
+            "АИ-92",
+            "АИ-95",
+            "АИ-98"});
+            this.FuelBox.Location = new System.Drawing.Point(11, 136);
+            this.FuelBox.Name = "FuelBox";
+            this.FuelBox.Size = new System.Drawing.Size(98, 125);
+            this.FuelBox.TabIndex = 49;
+            // 
+            // DistanceLabel
+            // 
+            this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.DistanceLabel.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DistanceLabel.ForeColor = System.Drawing.Color.Transparent;
+            this.DistanceLabel.Location = new System.Drawing.Point(25, 15);
+            this.DistanceLabel.Name = "DistanceLabel";
+            this.DistanceLabel.Size = new System.Drawing.Size(285, 25);
+            this.DistanceLabel.TabIndex = 48;
+            this.DistanceLabel.Text = "Введите расстояние(КМ):";
+            this.DistanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ClearButConv
+            // 
+            this.ClearButConv.BackColor = System.Drawing.Color.Transparent;
+            this.ClearButConv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClearButConv.FlatAppearance.BorderSize = 0;
+            this.ClearButConv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButConv.Font = new System.Drawing.Font("Solomon Sans Normal", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButConv.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ClearButConv.Location = new System.Drawing.Point(387, 46);
+            this.ClearButConv.Name = "ClearButConv";
+            this.ClearButConv.Size = new System.Drawing.Size(34, 50);
+            this.ClearButConv.TabIndex = 47;
+            this.ClearButConv.TabStop = false;
+            this.ClearButConv.Text = "C";
+            this.ClearButConv.UseVisualStyleBackColor = false;
+            this.ClearButConv.Click += new System.EventHandler(this.ClearButConv_Click);
+            // 
+            // inputDistance
+            // 
+            this.inputDistance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.inputDistance.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputDistance.Font = new System.Drawing.Font("Solomon Sans Normal", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputDistance.ForeColor = System.Drawing.Color.Transparent;
+            this.inputDistance.Location = new System.Drawing.Point(30, 49);
+            this.inputDistance.Multiline = true;
+            this.inputDistance.Name = "inputDistance";
+            this.inputDistance.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.inputDistance.Size = new System.Drawing.Size(328, 42);
+            this.inputDistance.TabIndex = 1;
             // 
             // Form1
             // 
@@ -854,6 +1084,8 @@
             this.MainCalc.PerformLayout();
             this.StrokeCalc.ResumeLayout(false);
             this.StrokeCalc.PerformLayout();
+            this.ConvertCalc.ResumeLayout(false);
+            this.ConvertCalc.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -907,6 +1139,20 @@
         private System.Windows.Forms.CheckBox strokelength;
         private System.Windows.Forms.Label labelresult;
         private System.Windows.Forms.Button reset;
+        private System.Windows.Forms.Label DistanceLabel;
+        private System.Windows.Forms.Button ClearButConv;
+        private System.Windows.Forms.TextBox inputDistance;
+        private System.Windows.Forms.ListBox FuelBox;
+        private System.Windows.Forms.Label ULFuelLabel;
+        private System.Windows.Forms.ListBox VehiclesBox;
+        private System.Windows.Forms.Label intakeLabel;
+        private System.Windows.Forms.Label UselessIntakeLabel;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label UselessPriceFuel;
+        private System.Windows.Forms.Label ULVehlabel;
+        private System.Windows.Forms.Button ConvEqual;
+        private System.Windows.Forms.TextBox OutputPrice;
+        private System.Windows.Forms.Label FINPriceFuel;
     }
 }
 

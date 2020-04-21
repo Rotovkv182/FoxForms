@@ -134,5 +134,8 @@
   <ItemGroup>
     <None Include="Resources\stroke.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\convert.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
