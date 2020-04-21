@@ -133,6 +133,9 @@
   <data name="Screenshot_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="convert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convert.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="b3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\b3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,9 +148,6 @@
   <data name="foxcalc5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stroke.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="foxcalc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +157,8 @@
   <data name="foxcalc8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="foxcalc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\foxcalc2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stroke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stroke.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="foxcalc9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,13 +166,16 @@
   <data name="foxcalc3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="foxcalc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foxcalc2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="foxcalc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\foxcalc1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\b4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="convert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\convert.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="foxcalc10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\foxcalc10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

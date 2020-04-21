@@ -112,7 +112,7 @@
             // MainCalc
             // 
             this.MainCalc.BackColor = System.Drawing.Color.Transparent;
-            this.MainCalc.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc9;
+            this.MainCalc.BackgroundImage = global::FoxCalc.Properties.Resources.foxcalc10;
             this.MainCalc.Controls.Add(this.dec);
             this.MainCalc.Controls.Add(this.hex);
             this.MainCalc.Controls.Add(this.oct);
@@ -669,7 +669,7 @@
             // 
             // box1
             // 
-            this.box1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            this.box1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
             this.box1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.box1.Font = new System.Drawing.Font("Code Pro", 26F);
             this.box1.ForeColor = System.Drawing.Color.White;

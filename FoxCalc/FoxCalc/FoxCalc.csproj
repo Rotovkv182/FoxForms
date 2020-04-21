@@ -137,5 +137,8 @@
   <ItemGroup>
     <None Include="Resources\convert.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foxcalc10.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
