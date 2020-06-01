@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FoxCalc
 {
@@ -373,7 +374,6 @@ namespace FoxCalc
 
         private void ConvEqual_Click(object sender, EventArgs e)
         {
-            Except(box1.Text);
             // задаем расход и цены за л бензина
             if (VehiclesBox.SelectedIndex == 0)
                 intakeLabel.Text = 8.ToString();
@@ -384,7 +384,7 @@ namespace FoxCalc
             if (FuelBox.SelectedIndex == 0)
                 PriceLabel.Text = 20.50.ToString();
             if (FuelBox.SelectedIndex == 1)
-                PriceLabel.Text = 45.95.ToString();
+                PriceLabel.Text = 45.95.ToString(); 
             if (FuelBox.SelectedIndex == 2)
                 PriceLabel.Text = 41.30.ToString();
             if (FuelBox.SelectedIndex == 3)
@@ -396,7 +396,7 @@ namespace FoxCalc
                 double fuel = Convert.ToDouble(PriceLabel.Text);
                 double intake = Convert.ToDouble(intakeLabel.Text);
                 // расчет цены за поездку
-                OutputPrice.Text = Math.Round((distance / 100 * intake) * fuel).ToString();
+                OutputPrice.Text = Math.Round(((distance / 100) * intake) * fuel).ToString();
         }
         private void ClearButConv_Click(object sender, EventArgs e)
         {
@@ -413,6 +413,22 @@ namespace FoxCalc
             string text = InputBox.Text;
             text = InputBox.Text.Substring(5); // извлечение подстроки
             outputBox.Text = text;
+        }
+
+        private void BInputFile_Click(object sender, EventArgs e)
+        { // считывание данных
+            FileStream file = new FileStream("C:/Users/1/source/repos/FoxForms/FoxCalc/FoxCalc/input.txt", FileMode.OpenOrCreate, FileAccess.Read); // создание файлового потока
+            StreamReader reader = new StreamReader(file); // создаем «потоковый читатель» и связываем его с файловым потоком
+            inputDistance.Text = reader.ReadToEnd(); // считывание из файла и вставка в поле расстояние
+            reader.Close(); // закрываем поток
+        }
+
+        private void BOutputFile_Click(object sender, EventArgs e)
+        { // запись результатов
+            FileStream file1 = new FileStream("C:/Users/1/source/repos/FoxForms/FoxCalc/FoxCalc/output.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(file1);  //создаем «потоковый писатель» и связываем его с файловым потоком
+            writer.Write("Стоимость поездки: " + OutputPrice.Text); // запись в файл
+            writer.Close(); // закрываем поток
         }
 
         public void Except(string box1)

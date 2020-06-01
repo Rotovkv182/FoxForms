@@ -90,6 +90,8 @@
             this.DistanceLabel = new System.Windows.Forms.Label();
             this.ClearButConv = new System.Windows.Forms.Button();
             this.inputDistance = new System.Windows.Forms.TextBox();
+            this.bInputFile = new System.Windows.Forms.Button();
+            this.bOutputFile = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.MainCalc.SuspendLayout();
             this.StrokeCalc.SuspendLayout();
@@ -848,6 +850,8 @@
             // ConvertCalc
             // 
             this.ConvertCalc.BackgroundImage = global::FoxCalc.Properties.Resources.convert;
+            this.ConvertCalc.Controls.Add(this.bOutputFile);
+            this.ConvertCalc.Controls.Add(this.bInputFile);
             this.ConvertCalc.Controls.Add(this.ConvEqual);
             this.ConvertCalc.Controls.Add(this.OutputPrice);
             this.ConvertCalc.Controls.Add(this.FINPriceFuel);
@@ -1067,6 +1071,40 @@
             this.inputDistance.Size = new System.Drawing.Size(328, 42);
             this.inputDistance.TabIndex = 1;
             // 
+            // bInputFile
+            // 
+            this.bInputFile.BackColor = System.Drawing.Color.Transparent;
+            this.bInputFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bInputFile.FlatAppearance.BorderSize = 0;
+            this.bInputFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bInputFile.Font = new System.Drawing.Font("Solomon Sans Normal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInputFile.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bInputFile.Location = new System.Drawing.Point(373, 215);
+            this.bInputFile.Name = "bInputFile";
+            this.bInputFile.Size = new System.Drawing.Size(70, 35);
+            this.bInputFile.TabIndex = 60;
+            this.bInputFile.TabStop = false;
+            this.bInputFile.Text = "Input";
+            this.bInputFile.UseVisualStyleBackColor = false;
+            this.bInputFile.Click += new System.EventHandler(this.BInputFile_Click);
+            // 
+            // bOutputFile
+            // 
+            this.bOutputFile.BackColor = System.Drawing.Color.Transparent;
+            this.bOutputFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bOutputFile.FlatAppearance.BorderSize = 0;
+            this.bOutputFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bOutputFile.Font = new System.Drawing.Font("Solomon Sans Normal", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bOutputFile.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.bOutputFile.Location = new System.Drawing.Point(378, 252);
+            this.bOutputFile.Name = "bOutputFile";
+            this.bOutputFile.Size = new System.Drawing.Size(59, 24);
+            this.bOutputFile.TabIndex = 61;
+            this.bOutputFile.TabStop = false;
+            this.bOutputFile.Text = "Output";
+            this.bOutputFile.UseVisualStyleBackColor = false;
+            this.bOutputFile.Click += new System.EventHandler(this.BOutputFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1153,6 +1191,8 @@
         private System.Windows.Forms.Button ConvEqual;
         private System.Windows.Forms.TextBox OutputPrice;
         private System.Windows.Forms.Label FINPriceFuel;
+        private System.Windows.Forms.Button bOutputFile;
+        private System.Windows.Forms.Button bInputFile;
     }
 }
 
